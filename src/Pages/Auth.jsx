@@ -1,23 +1,19 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import "./Auth.css";
 
-const translations = {
+const copy = {
   uz: {
     eyebrow: "ECWT • GLOBAL COMMERCE OS",
     titleA: "O‘zbekiston mahsulotlarini",
     titleB: "dunyoga olib chiqamiz.",
     description:
-      "Mahsulotingizni yuklang. ECWT AI uni tahlil qiladi, xalqaro savdoga tayyorlaydi va mos marketplace’larni tavsiya qiladi.",
+      "ECWT AI mahsulotingizni tahlil qiladi, xalqaro savdoga tayyorlaydi va mos marketplace’larni tavsiya qiladi.",
     start: "Boshlash",
     login: "Kirish",
     trusted: "O‘zbek biznesi uchun yaratilgan",
-    metric1: "Marketplace",
-    metric2: "Biznes imkoniyati",
-    metric3: "AI yordamchi",
-    cardLabel: "ECWT ID",
-    cardTitle: "Global savdoni boshlang",
-    cardText:
-      "Bir necha oddiy qadam orqali mahsulotingizni xalqaro bozorga tayyorlang.",
+    stat1: "Global marketplace",
+    stat2: "Biznes imkoniyati",
+    stat3: "AI yordamchi",
     register: "Ro‘yxatdan o‘tish",
     existing: "Akkauntim bor",
     phoneTitle: "Telefon raqamingiz",
@@ -31,17 +27,13 @@ const translations = {
     titleA: "Товары Узбекистана",
     titleB: "выходят на мировой рынок.",
     description:
-      "Загрузите товар. ECWT AI анализирует его, готовит к международной торговле и подбирает подходящие маркетплейсы.",
+      "ECWT AI анализирует товар, готовит его к международной торговле и рекомендует подходящие маркетплейсы.",
     start: "Начать",
     login: "Войти",
     trusted: "Создано для бизнеса Узбекистана",
-    metric1: "Маркетплейсов",
-    metric2: "Возможности бизнеса",
-    metric3: "AI помощник",
-    cardLabel: "ECWT ID",
-    cardTitle: "Начните глобальные продажи",
-    cardText:
-      "Подготовьте свой товар к международному рынку за несколько простых шагов.",
+    stat1: "Глобальных маркетплейсов",
+    stat2: "Возможности бизнеса",
+    stat3: "AI помощник",
     register: "Регистрация",
     existing: "У меня есть аккаунт",
     phoneTitle: "Номер телефона",
@@ -55,17 +47,13 @@ const translations = {
     titleA: "Products from Uzbekistan",
     titleB: "built for the world.",
     description:
-      "Upload your product. ECWT AI analyzes it, prepares it for international commerce and recommends the right marketplaces.",
+      "ECWT AI analyzes your product, prepares it for international commerce and recommends the right marketplaces.",
     start: "Get started",
     login: "Sign in",
     trusted: "Built for businesses in Uzbekistan",
-    metric1: "Marketplaces",
-    metric2: "Business potential",
-    metric3: "AI assistant",
-    cardLabel: "ECWT ID",
-    cardTitle: "Start selling globally",
-    cardText:
-      "Prepare your product for international markets through a simple guided experience.",
+    stat1: "Global marketplaces",
+    stat2: "Business potential",
+    stat3: "AI assistant",
     register: "Create account",
     existing: "I have an account",
     phoneTitle: "Phone number",
@@ -75,7 +63,7 @@ const translations = {
   },
 };
 
-const marketplaces = [
+const markets = [
   "Amazon",
   "eBay",
   "Walmart",
@@ -92,42 +80,45 @@ function Auth() {
   const [mode, setMode] = useState("register");
   const [phone, setPhone] = useState("");
 
-  const t = translations[language];
+  const t = useMemo(() => copy[language], [language]);
 
-  const begin = (selectedMode) => {
+  const openPhone = (selectedMode) => {
     setMode(selectedMode);
     setStep("phone");
   };
 
-  return (
-    <main className="ecwt-auth">
-      <div className="ecwt-noise" />
-      <div className="ecwt-ambient ecwt-ambient-one" />
-      <div className="ecwt-ambient ecwt-ambient-two" />
+  const cleanPhone = phone.replace(/\D/g, "");
 
-      <header className="ecwt-header">
-        <div className="ecwt-brand">
-          <div className="ecwt-mark">
-            <span />
+  return (
+    <main className="premium-auth">
+      <div className="premium-bg" />
+      <div className="premium-grid" />
+      <div className="premium-orb premium-orb-a" />
+      <div className="premium-orb premium-orb-b" />
+
+      <header className="premium-header">
+        <div className="premium-brand">
+          <div className="premium-logo">
+            <span className="premium-logo-dot" />
             EC
           </div>
 
-          <div className="ecwt-brand-name">ECWT</div>
+          <div className="premium-brand-word">ECWT</div>
 
-          <div className="ecwt-company">
+          <div className="premium-brand-sub">
             O‘ZBEKISTON ELEKTRON
             <br />
             TIJORAT KOMPANIYASI
           </div>
         </div>
 
-        <div className="ecwt-header-right">
-          <span className="ecwt-status">
-            <i />
+        <div className="premium-header-right">
+          <div className="premium-status">
+            <span />
             {t.trusted}
-          </span>
+          </div>
 
-          <div className="ecwt-header-langs">
+          <div className="premium-langs">
             {["uz", "ru", "en"].map((lang) => (
               <button
                 key={lang}
@@ -141,9 +132,9 @@ function Auth() {
         </div>
       </header>
 
-      <section className="ecwt-hero">
-        <div className="ecwt-copy">
-          <div className="ecwt-eyebrow">
+      <section className="premium-hero">
+        <div className="premium-copy">
+          <div className="premium-eyebrow">
             <span />
             {t.eyebrow}
           </div>
@@ -153,86 +144,92 @@ function Auth() {
             <strong>{t.titleB}</strong>
           </h1>
 
-          <p className="ecwt-description">{t.description}</p>
+          <p>{t.description}</p>
 
-          <div className="ecwt-actions">
+          <div className="premium-actions">
             <button
-              className="ecwt-main-action"
-              onClick={() => begin("register")}
+              className="premium-primary"
+              onClick={() => openPhone("register")}
             >
               {t.start}
               <span>→</span>
             </button>
 
             <button
-              className="ecwt-text-action"
-              onClick={() => begin("login")}
+              className="premium-secondary"
+              onClick={() => openPhone("login")}
             >
               {t.login}
             </button>
           </div>
 
-          <div className="ecwt-metrics">
+          <div className="premium-stats">
             <div>
               <strong>9+</strong>
-              <span>{t.metric1}</span>
+              <span>{t.stat1}</span>
             </div>
 
             <div>
               <strong>100K+</strong>
-              <span>{t.metric2}</span>
+              <span>{t.stat2}</span>
             </div>
 
             <div>
               <strong>AI</strong>
-              <span>{t.metric3}</span>
+              <span>{t.stat3}</span>
             </div>
           </div>
         </div>
 
-        <div className="ecwt-id-zone">
-          <div className="ecwt-id-card">
-            <div className="ecwt-id-top">
-              <span className="ecwt-id-label">{t.cardLabel}</span>
+        <div className="premium-center">
+          <div className="premium-card">
+            <div className="premium-card-top">
+              <span>ECWT ID</span>
 
-              <span className="ecwt-id-live">
+              <span className="premium-live">
                 <i />
                 LIVE
               </span>
             </div>
 
-            <div className="ecwt-mini-core">
-              <div className="ecwt-mini-ring ring-one" />
-              <div className="ecwt-mini-ring ring-two" />
+            <div className="premium-core">
+              <div className="premium-core-ring core-ring-1" />
+              <div className="premium-core-ring core-ring-2" />
+              <div className="premium-core-ring core-ring-3" />
 
-              <div className="ecwt-mini-center">
-                <span>UZ</span>
+              <div className="premium-core-center">
+                <small>ECWT</small>
+                <strong>UZ</strong>
               </div>
 
-              <i className="ecwt-mini-light light-one" />
-              <i className="ecwt-mini-light light-two" />
-              <i className="ecwt-mini-light light-three" />
+              <i className="premium-core-light l1" />
+              <i className="premium-core-light l2" />
+              <i className="premium-core-light l3" />
             </div>
 
-            <h2>{t.cardTitle}</h2>
-            <p>{t.cardText}</p>
+            <h2>Global savdoni boshlang</h2>
+
+            <p>
+              Mahsulotingizni yuklang. ECWT AI sizga keyingi qadamlarni
+              bosqichma-bosqich ko‘rsatadi.
+            </p>
 
             <button
-              className="ecwt-register"
-              onClick={() => begin("register")}
+              className="premium-register"
+              onClick={() => openPhone("register")}
             >
               {t.register}
               <span>→</span>
             </button>
 
             <button
-              className="ecwt-existing"
-              onClick={() => begin("login")}
+              className="premium-existing"
+              onClick={() => openPhone("login")}
             >
               {t.existing}
             </button>
 
-            <div className="ecwt-id-languages">
+            <div className="premium-card-langs">
               <button
                 className={language === "uz" ? "active" : ""}
                 onClick={() => setLanguage("uz")}
@@ -257,52 +254,50 @@ function Auth() {
           </div>
         </div>
 
-        <div className="ecwt-world">
-          <div className="ecwt-world-backlight" />
+        <div className="premium-world">
+          <div className="premium-world-glow" />
 
-          <div className="ecwt-sphere">
-            <div className="ecwt-sphere-surface" />
-            <div className="ecwt-sphere-latitudes" />
-            <div className="ecwt-sphere-longitudes" />
-            <div className="ecwt-sphere-light" />
+          <div className="premium-sphere">
+            <div className="premium-sphere-grid" />
+            <div className="premium-sphere-shine" />
 
-            <div className="ecwt-uz-core">
+            <div className="premium-uz-core">
               <small>ECWT</small>
               <strong>UZ</strong>
             </div>
 
-            <div className="ecwt-route route-one">
+            <div className="premium-route route-a">
               <i />
             </div>
 
-            <div className="ecwt-route route-two">
+            <div className="premium-route route-b">
               <i />
             </div>
 
-            <div className="ecwt-route route-three">
+            <div className="premium-route route-c">
               <i />
             </div>
 
-            <div className="ecwt-route route-four">
+            <div className="premium-route route-d">
               <i />
             </div>
           </div>
 
-          <div className="ecwt-orbit orbit-one" />
-          <div className="ecwt-orbit orbit-two" />
-          <div className="ecwt-orbit orbit-three" />
+          <div className="premium-orbit-ring orbit-a" />
+          <div className="premium-orbit-ring orbit-b" />
+          <div className="premium-orbit-ring orbit-c" />
 
-          {marketplaces.map((marketplace, index) => (
+          {markets.map((market, index) => (
             <div
-              key={marketplace}
-              className={`ecwt-market market-${index + 1}`}
+              key={market}
+              className={`premium-market premium-market-${index + 1}`}
             >
-              <span>{marketplace.slice(0, 1)}</span>
-              {marketplace}
+              <span>{market.slice(0, 1)}</span>
+              {market}
             </div>
           ))}
 
-          <div className="ecwt-world-caption">
+          <div className="premium-world-label">
             <span />
             Uzbekistan
             <b>→</b>
@@ -311,24 +306,24 @@ function Auth() {
         </div>
       </section>
 
-      <footer className="ecwt-footer">
+      <footer className="premium-footer">
         <span>ECWT / GLOBAL COMMERCE INFRASTRUCTURE</span>
         <span>AI • MARKETPLACE • BRAND • ANALYTICS</span>
       </footer>
 
       {step === "phone" && (
-        <div className="ecwt-modal">
-          <div className="ecwt-phone-card">
+        <div className="premium-modal">
+          <div className="premium-phone-card">
             <button
-              className="ecwt-back"
+              className="premium-back"
               onClick={() => setStep("welcome")}
             >
               ← {t.back}
             </button>
 
-            <div className="ecwt-phone-logo">EC</div>
+            <div className="premium-phone-logo">EC</div>
 
-            <span className="ecwt-phone-kicker">
+            <span className="premium-phone-kicker">
               {mode === "register" ? t.register : t.login}
             </span>
 
@@ -336,14 +331,14 @@ function Auth() {
 
             <p>{t.phoneText}</p>
 
-            <label className="ecwt-phone-input">
+            <label className="premium-phone-input">
               <span>+998</span>
 
               <input
                 value={phone}
-                onChange={(event) =>
+                onChange={(e) =>
                   setPhone(
-                    event.target.value
+                    e.target.value
                       .replace(/[^0-9 ]/g, "")
                       .slice(0, 12)
                   )
@@ -355,14 +350,15 @@ function Auth() {
             </label>
 
             <button
-              className="ecwt-phone-continue"
-              disabled={phone.replace(/\D/g, "").length < 9}
+              className="premium-phone-continue"
+              disabled={cleanPhone.length < 9}
+              onClick={() => alert("Keyingi bosqich: SMS tasdiqlash")}
             >
               {t.continue}
               <span>→</span>
             </button>
 
-            <div className="ecwt-phone-security">
+            <div className="premium-phone-security">
               <i />
               Secure ECWT verification
             </div>
