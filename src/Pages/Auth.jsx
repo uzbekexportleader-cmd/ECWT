@@ -26,393 +26,281 @@ function Auth() {
         }
 
         body {
-          overflow-x: hidden;
           background: #020916;
+          overflow-x: hidden;
         }
 
-        .ecwt-auth-page {
+        .ecwt-auth {
           position: relative;
           width: 100%;
           min-height: 100vh;
           overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: Arial, Helvetica, sans-serif;
           background: #020916;
+          font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* FON — ANIMATSIYA YO‘Q, ZOOM YO‘Q */
-        .ecwt-background {
+        /* TASDIQLANGAN DIZAYN — QIMIRLAMAYDI */
+        .ecwt-bg {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
-          background-image:
-            linear-gradient(
-              rgba(1, 8, 22, 0.08),
-              rgba(1, 8, 22, 0.08)
-            ),
-            url("/5a0a29b6-117f-4a16-bc98-45f6ffaf07fc.png");
-          background-position: center center;
+          background-image: url("/5a0a29b6-117f-4a16-bc98-45f6ffaf07fc.png");
           background-repeat: no-repeat;
+          background-position: center center;
           background-size: cover;
           z-index: 0;
         }
 
-        .ecwt-overlay {
+        /* FON RASMDAGI TUGMALAR USTIGA KO‘RINMAS KLIK ZONALARI */
+        .auth-hotspots {
           position: absolute;
           inset: 0;
-          background:
-            radial-gradient(
-              circle at center,
-              rgba(0, 153, 255, 0.03),
-              rgba(0, 0, 0, 0.05)
-            );
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .ecwt-auth-card {
-          position: relative;
           z-index: 5;
-          width: min(460px, calc(100% - 40px));
-          padding: 34px 30px 28px;
-          border-radius: 28px;
-
-          background: linear-gradient(
-            145deg,
-            rgba(5, 28, 58, 0.94),
-            rgba(3, 17, 38, 0.96)
-          );
-
-          border: 1px solid rgba(70, 164, 255, 0.55);
-
-          box-shadow:
-            0 0 35px rgba(0, 132, 255, 0.22),
-            0 25px 70px rgba(0, 0, 0, 0.48);
-
-          backdrop-filter: blur(8px);
-          text-align: center;
-          color: white;
         }
 
-        .ecwt-logo {
-          font-size: 56px;
-          line-height: 1;
-          margin: 0;
-          font-weight: 900;
-          letter-spacing: 1px;
-
-          background: linear-gradient(
-            90deg,
-            #2588ff,
-            #39cfff,
-            #4de6a5
-          );
-
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
-
-          text-shadow: 0 0 30px rgba(0, 153, 255, 0.22);
-        }
-
-        .ecwt-slogan {
-          margin: 10px 0 22px;
-          color: #d7e6f7;
-          font-size: 15px;
-        }
-
-        .ecwt-title {
-          margin: 0 0 10px;
-          color: white;
-          font-size: 28px;
-          line-height: 1.25;
-          font-weight: 800;
-        }
-
-        .ecwt-description {
-          margin: 0 0 26px;
-          color: #a9bdd4;
-          font-size: 15px;
-          line-height: 1.6;
-        }
-
-        .ecwt-primary {
-          width: 100%;
-          min-height: 58px;
-          border: none;
+        .hotspot {
+          position: absolute;
+          left: 36%;
+          width: 25%;
+          border: 0;
           border-radius: 14px;
-
-          background: linear-gradient(
-            90deg,
-            #126cff,
-            #00cfff,
-            #18dfa0
-          );
-
-          color: white;
-          font-size: 17px;
-          font-weight: 900;
+          background: transparent;
           cursor: pointer;
+        }
 
+        .hotspot-register {
+          top: 59%;
+          height: 7%;
+        }
+
+        .hotspot-login {
+          top: 68%;
+          height: 7%;
+        }
+
+        .hotspot-register:hover {
           box-shadow:
-            0 10px 30px rgba(0, 132, 255, 0.28),
-            0 0 20px rgba(0, 225, 190, 0.12);
-
-          transition:
-            transform 0.2s ease,
-            filter 0.2s ease;
+            0 0 22px rgba(0, 235, 190, 0.55),
+            inset 0 0 22px rgba(0, 235, 190, 0.12);
         }
 
-        .ecwt-primary:hover {
-          transform: translateY(-2px);
-          filter: brightness(1.08);
+        .hotspot-login:hover {
+          box-shadow:
+            0 0 20px rgba(38, 132, 255, 0.45),
+            inset 0 0 18px rgba(38, 132, 255, 0.10);
         }
 
-        .ecwt-primary:disabled {
-          cursor: not-allowed;
-          transform: none;
-        }
-
-        .ecwt-secondary {
-          width: 100%;
-          min-height: 58px;
-          margin-top: 13px;
-
-          border-radius: 14px;
-          border: 1px solid rgba(129, 177, 226, 0.38);
-
-          background: rgba(3, 20, 43, 0.78);
-
-          color: white;
-          font-size: 17px;
-          font-weight: 900;
-          cursor: pointer;
-
-          transition:
-            background 0.2s ease,
-            border-color 0.2s ease;
-        }
-
-        .ecwt-secondary:hover {
-          background: rgba(10, 42, 76, 0.9);
-          border-color: rgba(60, 170, 255, 0.7);
-        }
-
-        .ecwt-languages {
+        /* TELEFON OYNASI FAQAT TUGMA BOSILGANDA CHIQADI */
+        .phone-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 20;
           display: flex;
           align-items: center;
           justify-content: center;
-          flex-wrap: wrap;
-          gap: 8px;
-          margin-top: 24px;
+          padding: 24px;
+
+          background: rgba(1, 8, 20, 0.72);
+          backdrop-filter: blur(10px);
         }
 
-        .ecwt-language {
-          padding: 4px 7px;
-          border: none;
-          background: transparent;
-          color: #a5b8ce;
-          font-size: 12px;
-          cursor: pointer;
+        .phone-card {
+          width: 100%;
+          max-width: 440px;
+          padding: 32px;
+          border-radius: 26px;
+
+          background:
+            linear-gradient(
+              145deg,
+              rgba(6, 30, 61, 0.97),
+              rgba(3, 16, 36, 0.98)
+            );
+
+          border: 1px solid rgba(69, 163, 255, 0.45);
+
+          box-shadow:
+            0 0 45px rgba(0, 134, 255, 0.18),
+            0 30px 80px rgba(0, 0, 0, 0.55);
+
+          color: white;
+          text-align: center;
         }
 
-        .ecwt-language:first-child {
-          color: #27e3b1;
-          font-weight: 800;
-        }
-
-        .ecwt-back {
+        .back-btn {
           display: block;
-          margin: 0 0 20px;
-          padding: 0;
-
-          border: none;
+          border: 0;
           background: transparent;
-
           color: #a9bdd4;
-          font-size: 14px;
           cursor: pointer;
+          padding: 0;
+          margin-bottom: 22px;
+          font-size: 14px;
         }
 
-        .ecwt-small-logo {
+        .mini-logo {
           display: inline-flex;
           align-items: center;
           justify-content: center;
 
-          min-width: 90px;
-          height: 50px;
-          padding: 0 18px;
-          margin-bottom: 20px;
+          width: 82px;
+          height: 58px;
 
-          border-radius: 14px;
-
+          border-radius: 16px;
           background: linear-gradient(
             135deg,
-            #1677ff,
-            #00cfa6
+            #187aff,
+            #00d2aa
           );
 
-          color: white;
           font-size: 20px;
           font-weight: 900;
+          margin-bottom: 20px;
 
-          box-shadow: 0 12px 30px rgba(0, 132, 255, 0.25);
+          box-shadow: 0 10px 28px rgba(0, 132, 255, 0.25);
         }
 
-        .ecwt-phone-box {
+        .phone-card h1 {
+          margin: 0 0 10px;
+          font-size: 28px;
+        }
+
+        .phone-card p {
+          margin: 0 0 24px;
+          color: #a9bdd4;
+          font-size: 15px;
+        }
+
+        .phone-box {
           display: flex;
           align-items: center;
           width: 100%;
           min-height: 60px;
-          margin: 20px 0 16px;
+          margin-bottom: 16px;
 
-          border: 1px solid rgba(110, 171, 230, 0.35);
+          border: 1px solid rgba(122, 179, 235, 0.32);
           border-radius: 14px;
-
-          background: rgba(1, 14, 31, 0.78);
           overflow: hidden;
+
+          background: rgba(1, 14, 31, 0.82);
         }
 
-        .ecwt-country-code {
+        .country-code {
           padding: 0 16px;
-          color: white;
           font-size: 17px;
           font-weight: 800;
           border-right: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .ecwt-phone-input {
+        .phone-input {
           flex: 1;
           min-width: 0;
           padding: 18px 15px;
-
-          border: none;
-          outline: none;
+          border: 0;
+          outline: 0;
           background: transparent;
-
           color: white;
           font-size: 18px;
         }
 
-        .ecwt-phone-input::placeholder {
-          color: #72869d;
+        .phone-input::placeholder {
+          color: #6f849d;
         }
 
-        .ecwt-security {
-          margin: 18px 0 0;
-          color: #8499b0;
-          font-size: 12px;
+        .continue-btn {
+          width: 100%;
+          min-height: 58px;
+          border: 0;
+          border-radius: 14px;
+          cursor: pointer;
+
+          background: linear-gradient(
+            90deg,
+            #176fff,
+            #00cfff,
+            #15dda0
+          );
+
+          color: white;
+          font-size: 16px;
+          font-weight: 900;
+
+          box-shadow: 0 10px 30px rgba(0, 132, 255, 0.23);
         }
 
-        @media (max-width: 700px) {
-          .ecwt-auth-page {
-            padding: 20px 0;
+        .continue-btn:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+
+        .security {
+          margin-top: 18px !important;
+          margin-bottom: 0 !important;
+          font-size: 12px !important;
+          color: #8196ad !important;
+        }
+
+        @media (max-width: 900px) {
+          .ecwt-bg {
+            background-size: auto 100%;
           }
 
-          .ecwt-background {
-            background-position: center center;
-          }
-
-          .ecwt-auth-card {
-            width: calc(100% - 28px);
-            padding: 30px 22px 24px;
-          }
-
-          .ecwt-logo {
-            font-size: 45px;
-          }
-
-          .ecwt-title {
-            font-size: 24px;
+          .hotspot {
+            left: 34%;
+            width: 32%;
           }
         }
       `}</style>
 
-      <div className="ecwt-auth-page">
-        <div className="ecwt-background" />
-        <div className="ecwt-overlay" />
+      <div className="ecwt-auth">
+        <div className="ecwt-bg" />
 
-        <div className="ecwt-auth-card">
-          {step === "welcome" && (
-            <>
-              <h1 className="ecwt-logo">ECWT</h1>
+        {step === "welcome" && (
+          <div className="auth-hotspots">
+            <button
+              className="hotspot hotspot-register"
+              onClick={() => openPhoneStep("register")}
+              aria-label="Ro‘yxatdan o‘tish"
+            />
 
-              <p className="ecwt-slogan">
-                Dunyoni bog‘laymiz, biznesingizni oshiramiz
-              </p>
+            <button
+              className="hotspot hotspot-login"
+              onClick={() => openPhoneStep("login")}
+              aria-label="Kirish"
+            />
+          </div>
+        )}
 
-              <h2 className="ecwt-title">
-                O‘zbekiston mahsulotlarini dunyoga soting
-              </h2>
-
-              <p className="ecwt-description">
-                Mahsulotingizni global marketplace’larda sotishni boshlang.
-                Xalqaro savdo endi yanada oson.
-              </p>
-
+        {step === "phone" && (
+          <div className="phone-overlay">
+            <div className="phone-card">
               <button
-                className="ecwt-primary"
-                onClick={() => openPhoneStep("register")}
-              >
-                RO‘YXATDAN O‘TISH
-              </button>
-
-              <button
-                className="ecwt-secondary"
-                onClick={() => openPhoneStep("login")}
-              >
-                KIRISH
-              </button>
-
-              <div className="ecwt-languages">
-                <button className="ecwt-language">
-                  🇺🇿 O‘zbekcha
-                </button>
-
-                <button className="ecwt-language">
-                  🇷🇺 Русский
-                </button>
-
-                <button className="ecwt-language">
-                  🇬🇧 English
-                </button>
-              </div>
-            </>
-          )}
-
-          {step === "phone" && (
-            <>
-              <button
-                className="ecwt-back"
+                className="back-btn"
                 onClick={() => setStep("welcome")}
               >
                 ← Orqaga
               </button>
 
-              <div className="ecwt-small-logo">
-                ECWT
-              </div>
+              <div className="mini-logo">ECWT</div>
 
-              <h1 className="ecwt-title">
+              <h1>
                 {mode === "register"
-                  ? "ECWT’ga xush kelibsiz!"
+                  ? "Ro‘yxatdan o‘tish"
                   : "ECWT’ga kirish"}
               </h1>
 
-              <p className="ecwt-description">
+              <p>
                 Telefon raqamingizni kiriting
               </p>
 
-              <div className="ecwt-phone-box">
-                <span className="ecwt-country-code">
+              <div className="phone-box">
+                <span className="country-code">
                   +998
                 </span>
 
                 <input
-                  className="ecwt-phone-input"
+                  className="phone-input"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   placeholder="90 123 45 67"
@@ -421,10 +309,7 @@ function Auth() {
               </div>
 
               <button
-                className="ecwt-primary"
-                style={{
-                  opacity: phone.length >= 7 ? 1 : 0.5,
-                }}
+                className="continue-btn"
                 disabled={phone.length < 7}
                 onClick={() =>
                   alert("Keyingi bosqich: SMS tasdiqlash")
@@ -433,12 +318,12 @@ function Auth() {
                 DAVOM ETISH →
               </button>
 
-              <p className="ecwt-security">
+              <p className="security">
                 🔒 Ma’lumotlaringiz xavfsiz himoyalanadi
               </p>
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
