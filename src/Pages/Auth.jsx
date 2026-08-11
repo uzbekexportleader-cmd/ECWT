@@ -91,11 +91,12 @@ const marketplaceItems = [
   { key: "amazon", text: "a", name: "Amazon" },
   { key: "ebay", text: "ebay", name: "eBay" },
   { key: "walmart", text: "✦", name: "Walmart" },
-  { key: "shopify", text: "S", name: "Shopify" },
   { key: "google", text: "G", name: "Google Marketplace" },
+  { key: "facebook", text: "f", name: "Facebook Marketplace" },
   { key: "mercari", text: "M", name: "Mercari" },
-  { key: "bonanza", text: "b", name: "Bonanza" },
+  { key: "bonanza", text: "bonanza", name: "Bonanza" },
   { key: "poshmark", text: "P", name: "Poshmark" },
+  { key: "shopify", text: "S", name: "Shopify" },
 ];
 
 const networkNodes = [
