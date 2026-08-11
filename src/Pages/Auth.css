@@ -2105,3 +2105,291 @@ button {
     min-height: 580px;
   }
 }
+
+/* =========================================================
+   ECWT AUTH — FINAL DESKTOP COMPOSITION FIX
+   Keeps the existing visual system, but locks the hero into
+   one clean first-screen composition on desktop.
+   ========================================================= */
+
+@media (min-width: 1281px) {
+  .auth-page {
+    height: 100vh;
+    min-height: 760px;
+    overflow: hidden;
+  }
+
+  .auth-header {
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 104px;
+    padding: 28px 3.1% 0;
+  }
+
+  .ecwt-brand__logo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .ecwt-brand__name {
+    font-size: 31px;
+  }
+
+  .auth-main {
+    position: absolute;
+    z-index: 5;
+    top: 104px;
+    right: 3.35%;
+    bottom: 128px;
+    left: 3.35%;
+
+    width: auto;
+    min-height: 0;
+    padding: 0;
+
+    grid-template-columns: minmax(0, 1fr) 410px;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .auth-hero {
+    align-self: center;
+  }
+
+  .auth-hero__content {
+    max-width: 470px;
+    transform: translateY(-2px);
+  }
+
+  .auth-eyebrow {
+    margin-bottom: 25px;
+    font-size: 13px;
+  }
+
+  .auth-title {
+    font-size: clamp(50px, 3.5vw, 62px);
+    line-height: .985;
+  }
+
+  .auth-description {
+    max-width: 405px;
+    margin-top: 26px;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .auth-world-map {
+    left: 25.5%;
+    top: 17%;
+    width: 47.5%;
+    height: 50.5%;
+    opacity: .88;
+    background-size: contain;
+    background-position: center;
+    filter:
+      saturate(1.15)
+      contrast(1.04)
+      brightness(.90)
+      drop-shadow(0 0 18px rgba(104, 35, 255, .18));
+  }
+
+  .auth-panel {
+    width: 410px;
+    align-self: center;
+    justify-self: end;
+    transform: none;
+  }
+
+  .auth-card {
+    min-height: 558px;
+    padding: 26px 27px 17px;
+    border-radius: 22px;
+  }
+
+  .auth-card__orb {
+    margin: 22px 0 13px;
+  }
+
+  .ecwt-orb {
+    width: 148px;
+    height: 148px;
+    transform: scale(.94);
+  }
+
+  .auth-card__copy h2 {
+    font-size: 23px;
+  }
+
+  .auth-card__copy p {
+    font-size: 13px;
+    line-height: 1.68;
+  }
+
+  .auth-card__actions {
+    margin-top: 18px;
+    gap: 11px;
+  }
+
+  .register-button {
+    height: 52px;
+  }
+
+  .login-button {
+    height: 49px;
+  }
+
+  .auth-language--card {
+    margin-top: 10px;
+  }
+
+  .auth-footer {
+    position: absolute;
+    z-index: 7;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+
+    width: 100%;
+    padding: 0 3.55%;
+
+    display: grid;
+    grid-template-columns: 500px minmax(0, 1fr);
+    align-items: center;
+    gap: 34px;
+  }
+
+  .auth-stats {
+    min-width: 0;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .auth-stat {
+    gap: 10px;
+  }
+
+  .auth-stat__icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .auth-stat strong {
+    font-size: 25px;
+  }
+
+  .auth-stat span {
+    font-size: 11px;
+  }
+
+  .auth-stats__divider {
+    height: 54px;
+  }
+
+  .marketplace-row {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: repeat(9, minmax(62px, 1fr));
+    gap: 12px;
+  }
+
+  .marketplace-box {
+    min-width: 0;
+    height: 72px;
+    overflow: hidden;
+    border-radius: 13px;
+  }
+
+  .marketplace-box span {
+    max-width: 100%;
+    white-space: nowrap;
+  }
+
+  .marketplace-box--amazon span { font-size: 42px; }
+  .marketplace-box--ebay span { font-size: 19px; }
+  .marketplace-box--walmart span { font-size: 32px; }
+  .marketplace-box--google span { font-size: 31px; }
+  .marketplace-box--mercari span {
+    width: 39px;
+    height: 39px;
+    font-size: 21px;
+  }
+  .marketplace-box--bonanza span { font-size: clamp(17px, 1.35vw, 26px); }
+  .marketplace-box--poshmark span { font-size: 28px; }
+  .marketplace-box--shopify span { font-size: 31px; }
+
+  .auth-wave--1 {
+    bottom: -7%;
+  }
+
+  .auth-wave--2 {
+    bottom: -16%;
+  }
+
+  .auth-wave--3 {
+    bottom: -8%;
+  }
+}
+
+@media (min-width: 1281px) and (max-height: 850px) {
+  .auth-header {
+    height: 92px;
+    padding-top: 22px;
+  }
+
+  .auth-main {
+    top: 92px;
+    bottom: 112px;
+  }
+
+  .auth-hero__content {
+    transform: translateY(-4px);
+  }
+
+  .auth-eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .auth-title {
+    font-size: clamp(46px, 3.25vw, 58px);
+  }
+
+  .auth-description {
+    margin-top: 20px;
+    line-height: 1.62;
+  }
+
+  .auth-card {
+    min-height: 520px;
+    padding-top: 22px;
+  }
+
+  .auth-card__orb {
+    margin: 13px 0 7px;
+  }
+
+  .ecwt-orb {
+    transform: scale(.84);
+    margin-block: -8px;
+  }
+
+  .auth-card__actions {
+    margin-top: 13px;
+  }
+
+  .auth-language--card {
+    margin-top: 5px;
+  }
+
+  .auth-footer {
+    bottom: 16px;
+  }
+
+  .marketplace-box {
+    height: 64px;
+  }
+
+  .auth-world-map {
+    top: 16.5%;
+    height: 52%;
+  }
+}
