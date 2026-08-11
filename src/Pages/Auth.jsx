@@ -9,34 +9,34 @@ const copy = {
       "ECWT AI mahsulotingizni tahlil qiladi, xalqaro savdoga tayyorlaydi va sizga mos global marketplace’larni tavsiya qiladi.",
     register: "RO‘YXATDAN O‘TISH",
     login: "KIRISH",
-    trusted: "O‘zbek biznesi uchun yaratilgan",
+    badge: "O‘zbek biznesi uchun yaratilgan",
     stat1: "Global marketplace",
     stat2: "Hunarmand va ishlab chiqaruvchi",
     stat3: "AI savdo yordamchisi",
     phoneRegister: "ECWT’ga qo‘shiling",
     phoneLogin: "ECWT’ga kirish",
     phoneText: "Telefon raqamingizni kiriting",
-    continue: "DAVOM ETISH",
+    continue: "DAVOM ETISH →",
     back: "Orqaga",
     secure: "Ma’lumotlaringiz xavfsiz himoyalanadi",
   },
 
   ru: {
     eyebrow: "AI-POWERED GLOBAL COMMERCE",
-    title1: "Выведите свой товар",
+    title1: "Выведите товар",
     title2: "на мировой рынок.",
     description:
-      "ECWT AI анализирует ваш товар, готовит его к международным продажам и рекомендует подходящие глобальные маркетплейсы.",
+      "ECWT AI анализирует товар, готовит его к международной торговле и рекомендует подходящие глобальные маркетплейсы.",
     register: "РЕГИСТРАЦИЯ",
     login: "ВОЙТИ",
-    trusted: "Создано для бизнеса Узбекистана",
+    badge: "Создано для бизнеса Узбекистана",
     stat1: "Глобальных маркетплейсов",
     stat2: "Мастеров и производителей",
-    stat3: "AI-помощник продаж",
+    stat3: "AI помощник продаж",
     phoneRegister: "Присоединиться к ECWT",
     phoneLogin: "Войти в ECWT",
     phoneText: "Введите номер телефона",
-    continue: "ПРОДОЛЖИТЬ",
+    continue: "ПРОДОЛЖИТЬ →",
     back: "Назад",
     secure: "Ваши данные надёжно защищены",
   },
@@ -49,44 +49,29 @@ const copy = {
       "ECWT AI analyzes your product, prepares it for international commerce and recommends the right global marketplaces.",
     register: "CREATE ACCOUNT",
     login: "SIGN IN",
-    trusted: "Built for businesses in Uzbekistan",
+    badge: "Built for businesses in Uzbekistan",
     stat1: "Global marketplaces",
     stat2: "Artisans & manufacturers",
     stat3: "AI commerce assistant",
     phoneRegister: "Join ECWT",
     phoneLogin: "Sign in to ECWT",
     phoneText: "Enter your phone number",
-    continue: "CONTINUE",
+    continue: "CONTINUE →",
     back: "Back",
     secure: "Your information is securely protected",
   },
 };
 
 const marketplaces = [
-  { name: "Amazon", className: "amazon" },
-  { name: "eBay", className: "ebay" },
-  { name: "Walmart", className: "walmart" },
-  { name: "Shopify", className: "shopify" },
-  { name: "Mercari", className: "mercari" },
-  { name: "Poshmark", className: "poshmark" },
-  { name: "Bonanza", className: "bonanza" },
-  { name: "Google", className: "google" },
+  { name: "Amazon", cls: "amazon" },
+  { name: "eBay", cls: "ebay" },
+  { name: "Walmart", cls: "walmart" },
+  { name: "Shopify", cls: "shopify" },
+  { name: "Mercari", cls: "mercari" },
+  { name: "Poshmark", cls: "poshmark" },
+  { name: "Bonanza", cls: "bonanza" },
+  { name: "Google", cls: "google" },
 ];
-
-function ArrowIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M5 12h13M13 6l6 6-6 6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function ShieldIcon() {
   return (
@@ -134,11 +119,12 @@ function Auth() {
         body,
         #root {
           margin: 0;
-          min-height: 100%;
           width: 100%;
+          min-height: 100%;
         }
 
         body {
+          overflow-x: hidden;
           background: #020713;
           font-family:
             Inter,
@@ -146,7 +132,6 @@ function Auth() {
             BlinkMacSystemFont,
             "Segoe UI",
             sans-serif;
-          overflow-x: hidden;
         }
 
         button,
@@ -154,248 +139,258 @@ function Auth() {
           font: inherit;
         }
 
-        button {
-          -webkit-tap-highlight-color: transparent;
-        }
-
         .ecwt-page {
-          --blue: #238cff;
-          --cyan: #25d7ff;
-          --green: #32e6b0;
-          --text: #f6f9ff;
-          --muted: #93a7bf;
-          --panel: rgba(5, 20, 43, 0.72);
+          --blue: #248cff;
+          --cyan: #26d4ff;
+          --green: #36e4b2;
+          --white: #f7faff;
+          --muted: #8ea4bd;
 
           position: relative;
           min-height: 100vh;
           overflow: hidden;
-          color: var(--text);
+          color: var(--white);
 
           background:
             radial-gradient(
-              circle at 78% 42%,
-              rgba(21, 115, 255, 0.17),
-              transparent 32%
+              circle at 77% 46%,
+              rgba(18, 107, 255, 0.18),
+              transparent 31%
             ),
             radial-gradient(
-              circle at 25% 82%,
-              rgba(33, 229, 175, 0.07),
-              transparent 28%
+              circle at 18% 87%,
+              rgba(38, 222, 177, 0.08),
+              transparent 27%
             ),
             linear-gradient(
               135deg,
               #020713 0%,
-              #031124 52%,
+              #041226 52%,
               #020713 100%
             );
         }
 
-        .grid-background {
+        .bg-grid {
           position: absolute;
           inset: 0;
-          opacity: 0.18;
           pointer-events: none;
+          opacity: 0.16;
 
           background-image:
             linear-gradient(
-              rgba(78, 139, 203, 0.08) 1px,
+              rgba(75, 139, 205, 0.08) 1px,
               transparent 1px
             ),
             linear-gradient(
               90deg,
-              rgba(78, 139, 203, 0.08) 1px,
+              rgba(75, 139, 205, 0.08) 1px,
               transparent 1px
             );
 
-          background-size: 72px 72px;
+          background-size: 76px 76px;
 
           mask-image:
             linear-gradient(
               to bottom,
-              transparent,
-              black 20%,
-              black 75%,
-              transparent
+              transparent 0%,
+              black 16%,
+              black 77%,
+              transparent 100%
             );
         }
 
-        .aurora {
+        .ambient {
           position: absolute;
-          width: 700px;
-          height: 700px;
           border-radius: 50%;
-          filter: blur(100px);
-          opacity: 0.08;
+          filter: blur(110px);
           pointer-events: none;
         }
 
-        .aurora-one {
+        .ambient-one {
+          width: 680px;
+          height: 680px;
           right: -280px;
-          top: -260px;
-          background: #1882ff;
+          top: -250px;
+          background: rgba(27, 125, 255, 0.08);
         }
 
-        .aurora-two {
-          left: -340px;
-          bottom: -380px;
-          background: #29ddb2;
+        .ambient-two {
+          width: 620px;
+          height: 620px;
+          left: -300px;
+          bottom: -350px;
+          background: rgba(39, 224, 178, 0.06);
         }
 
         .shell {
           position: relative;
           z-index: 2;
 
-          width: min(1450px, calc(100% - 56px));
+          width: min(1360px, calc(100% - 64px));
           min-height: 100vh;
 
           margin: 0 auto;
-          padding: 34px 0 36px;
+          padding: 32px 0 28px;
 
           display: flex;
           flex-direction: column;
         }
 
+        /* NAV */
+
         .nav {
           display: flex;
-          justify-content: space-between;
           align-items: center;
+          justify-content: space-between;
         }
 
         .brand {
           display: flex;
           align-items: center;
-          gap: 15px;
+          gap: 14px;
         }
 
         .brand-symbol {
           position: relative;
 
-          width: 46px;
-          height: 46px;
-
-          border-radius: 15px;
+          width: 43px;
+          height: 43px;
 
           display: grid;
           place-items: center;
 
-          color: white;
-          font-size: 11px;
-          font-weight: 900;
-          letter-spacing: 0.4px;
+          border-radius: 14px;
 
-          border: 1px solid rgba(74, 172, 255, 0.42);
+          font-size: 10px;
+          font-weight: 900;
+
+          border: 1px solid rgba(72, 167, 255, 0.42);
 
           background:
             linear-gradient(
               145deg,
-              rgba(27, 126, 255, 0.26),
-              rgba(31, 229, 176, 0.13)
+              rgba(34, 125, 255, 0.23),
+              rgba(38, 227, 177, 0.12)
             );
 
           box-shadow:
-            inset 0 0 22px rgba(50, 169, 255, 0.13),
-            0 0 30px rgba(18, 119, 255, 0.08);
+            inset 0 0 18px rgba(41, 151, 255, 0.13);
         }
 
-        .brand-symbol::before {
+        .brand-symbol::after {
           content: "";
           position: absolute;
           inset: 5px;
 
-          border: 1px dashed rgba(70, 219, 255, 0.34);
-          border-radius: 11px;
+          border:
+            1px dashed rgba(73, 219, 255, 0.3);
 
-          animation: logoSpin 18s linear infinite;
+          border-radius: 10px;
+
+          animation: symbolRotate 20s linear infinite;
         }
 
-        @keyframes logoSpin {
+        @keyframes symbolRotate {
           to {
             transform: rotate(360deg);
           }
         }
 
-        .brand-word {
-          font-size: 28px;
+        .brand-name {
+          font-size: 27px;
           font-weight: 900;
           letter-spacing: -1px;
         }
 
-        .brand-description {
-          padding-left: 15px;
-          border-left: 1px solid rgba(255,255,255,0.16);
+        .brand-company {
+          padding-left: 14px;
 
-          color: #9eb2c9;
+          border-left:
+            1px solid rgba(255,255,255,0.15);
 
-          font-size: 11px;
+          color: #8fa5bd;
+
+          font-size: 10px;
           line-height: 1.25;
           font-weight: 700;
         }
 
-        .nav-chip {
-          display: flex;
+        .award-chip {
+          display: inline-flex;
           align-items: center;
           gap: 8px;
 
-          padding: 9px 13px;
+          padding: 8px 12px;
 
           border-radius: 999px;
 
-          border: 1px solid rgba(70, 222, 183, 0.2);
+          color: #a1bbcd;
+          font-size: 10px;
 
-          background: rgba(6, 31, 45, 0.48);
+          border:
+            1px solid rgba(45, 221, 179, 0.2);
 
-          color: #a7c2d3;
-          font-size: 11px;
+          background:
+            rgba(3, 31, 45, 0.45);
         }
 
-        .live-dot {
-          width: 7px;
-          height: 7px;
+        .award-dot {
+          width: 6px;
+          height: 6px;
+
           border-radius: 50%;
+
           background: var(--green);
 
           box-shadow:
             0 0 8px var(--green),
-            0 0 16px rgba(50, 230, 176, 0.45);
+            0 0 15px rgba(54, 228, 178, 0.45);
         }
+
+        /* MAIN */
 
         .hero {
           flex: 1;
 
           display: grid;
+
           grid-template-columns:
-            minmax(0, 0.95fr)
-            minmax(380px, 0.72fr)
-            minmax(0, 1.18fr);
+            minmax(0, 0.93fr)
+            minmax(330px, 0.72fr)
+            minmax(420px, 1.05fr);
+
+          gap: 48px;
 
           align-items: center;
 
-          gap: 42px;
-          padding: 30px 0 20px;
+          padding: 38px 0 22px;
         }
 
         /* LEFT */
 
         .copy-zone {
-          max-width: 530px;
+          min-width: 0;
+          max-width: 480px;
         }
 
         .eyebrow {
-          display: inline-flex;
+          display: flex;
           align-items: center;
-          gap: 9px;
+          gap: 10px;
 
           margin-bottom: 20px;
 
-          color: #8fd8ff;
+          color: #82d7ff;
 
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 1.4px;
+          font-size: 10px;
+          letter-spacing: 1.5px;
+          font-weight: 900;
         }
 
-        .eyebrow-line {
-          width: 30px;
+        .eyebrow::before {
+          content: "";
+
+          width: 28px;
           height: 1px;
 
           background:
@@ -406,519 +401,568 @@ function Auth() {
             );
         }
 
-        .main-title {
+        .hero-title {
           margin: 0;
 
-          font-size: clamp(52px, 5vw, 82px);
+          max-width: 470px;
+
+          font-size: clamp(48px, 4.2vw, 67px);
           line-height: 0.98;
 
+          letter-spacing: -3.4px;
           font-weight: 760;
-          letter-spacing: -4px;
         }
 
-        .gradient-title {
-          display: inline-block;
-          margin-top: 6px;
+        .hero-gradient {
+          display: block;
+          margin-top: 7px;
 
           background:
             linear-gradient(
               90deg,
-              #57aaff,
-              #25d5ff 47%,
-              #43e7b0
+              #5aa6ff 0%,
+              #29d0ff 48%,
+              #43e3ae 100%
             );
 
           -webkit-background-clip: text;
           background-clip: text;
+
           color: transparent;
         }
 
         .hero-description {
-          max-width: 490px;
-          margin: 26px 0 28px;
+          max-width: 460px;
+
+          margin: 24px 0 26px;
 
           color: var(--muted);
 
-          font-size: 16px;
-          line-height: 1.65;
+          font-size: 14px;
+          line-height: 1.7;
         }
 
-        .stats-row {
-          display: flex;
-          align-items: stretch;
+        .stats {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
 
-          margin-top: 28px;
+          border-top:
+            1px solid rgba(255,255,255,0.08);
 
-          border-top: 1px solid rgba(255,255,255,0.08);
-          border-bottom: 1px solid rgba(255,255,255,0.08);
+          border-bottom:
+            1px solid rgba(255,255,255,0.08);
         }
 
         .stat {
-          flex: 1;
-
-          padding: 17px 18px 17px 0;
+          padding: 16px 15px 16px 0;
         }
 
         .stat + .stat {
-          padding-left: 18px;
-          border-left: 1px solid rgba(255,255,255,0.08);
+          padding-left: 15px;
+
+          border-left:
+            1px solid rgba(255,255,255,0.08);
         }
 
         .stat-value {
           color: white;
-
-          font-size: 19px;
-          font-weight: 800;
+          font-size: 17px;
+          font-weight: 850;
         }
 
         .stat-label {
           margin-top: 5px;
 
-          color: #7389a2;
-          font-size: 10px;
+          color: #6e849d;
+
+          font-size: 9px;
           line-height: 1.35;
         }
 
-        .trust-line {
+        .secure-line {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
 
-          margin-top: 20px;
+          margin-top: 18px;
 
-          color: #7890aa;
-          font-size: 11px;
+          color: #7087a0;
+          font-size: 10px;
         }
 
-        .trust-line svg {
-          width: 17px;
+        .secure-line svg {
+          width: 15px;
           color: var(--green);
         }
 
-        /* CENTER */
+        /* AUTH PANEL */
 
         .auth-panel {
           position: relative;
 
-          padding: 34px 28px 27px;
+          width: 100%;
+          max-width: 365px;
 
-          border-radius: 30px;
+          justify-self: center;
 
-          border: 1px solid rgba(93, 161, 236, 0.25);
+          padding: 30px 25px 24px;
+
+          border-radius: 27px;
 
           background:
             linear-gradient(
               160deg,
-              rgba(12, 36, 70, 0.76),
-              rgba(3, 15, 34, 0.91)
+              rgba(12, 37, 71, 0.73),
+              rgba(3, 15, 34, 0.94)
             );
 
-          box-shadow:
-            0 40px 110px rgba(0, 0, 0, 0.43),
-            inset 0 1px rgba(255,255,255,0.04);
+          border:
+            1px solid rgba(87, 158, 229, 0.27);
 
-          backdrop-filter: blur(22px);
+          box-shadow:
+            0 35px 100px rgba(0,0,0,0.43),
+            inset 0 1px rgba(255,255,255,0.035);
+
+          backdrop-filter: blur(24px);
         }
 
-        .auth-panel::before {
+        .auth-panel::after {
           content: "";
+
           position: absolute;
-          inset: -1px;
+          inset: 0;
 
           border-radius: inherit;
+
           pointer-events: none;
 
           background:
-            linear-gradient(
-              130deg,
-              rgba(47, 146, 255, 0.22),
-              transparent 35%,
-              transparent 66%,
-              rgba(44, 227, 173, 0.13)
+            radial-gradient(
+              circle at 50% 12%,
+              rgba(38, 139, 255, 0.12),
+              transparent 40%
             );
-
-          mask:
-            linear-gradient(#000 0 0) content-box,
-            linear-gradient(#000 0 0);
-
-          mask-composite: exclude;
-
-          padding: 1px;
         }
 
-        .auth-head {
-          text-align: center;
+        .auth-content {
+          position: relative;
+          z-index: 2;
         }
 
         .auth-logo {
           margin: 0;
 
-          font-size: 43px;
+          text-align: center;
+
+          font-size: 40px;
           font-weight: 900;
           letter-spacing: -2px;
 
           background:
             linear-gradient(
               90deg,
-              #5b9fff,
-              #49d6ff,
-              #54e3b5
+              #5c9fff,
+              #46d0ff,
+              #52e2b5
             );
 
           -webkit-background-clip: text;
           background-clip: text;
+
           color: transparent;
         }
 
         .auth-subtitle {
-          margin: 8px 0 25px;
+          margin: 7px 0 19px;
 
-          color: #8197b0;
-          font-size: 11px;
+          text-align: center;
+
+          color: #748ba4;
+
+          font-size: 9px;
         }
 
-        .network-mini {
+        .micro-network {
           position: relative;
-          height: 160px;
+          height: 138px;
 
-          margin-bottom: 21px;
-
-          overflow: hidden;
+          margin-bottom: 19px;
         }
 
-        .mini-radar {
+        .network-circle {
           position: absolute;
           left: 50%;
-          top: 52%;
-
-          width: 125px;
-          height: 125px;
+          top: 49%;
 
           transform: translate(-50%, -50%);
 
+          width: 100px;
+          height: 100px;
+
           border-radius: 50%;
 
-          border: 1px solid rgba(58, 165, 255, 0.19);
+          border:
+            1px solid rgba(57, 151, 244, 0.18);
 
           box-shadow:
-            0 0 40px rgba(26, 133, 255, 0.08);
+            0 0 35px rgba(30, 137, 255, 0.08);
         }
 
-        .mini-radar::before,
-        .mini-radar::after {
+        .network-circle::before,
+        .network-circle::after {
           content: "";
+
           position: absolute;
-          inset: 17px;
 
           border-radius: 50%;
-          border: 1px solid rgba(58, 165, 255, 0.14);
+
+          border:
+            1px solid rgba(57, 151, 244, 0.14);
         }
 
-        .mini-radar::after {
-          inset: 36px;
+        .network-circle::before {
+          inset: 17px;
         }
 
-        .mini-core {
+        .network-circle::after {
+          inset: 34px;
+        }
+
+        .network-core {
           position: absolute;
-          left: 50%;
-          top: 52%;
 
-          width: 56px;
-          height: 56px;
+          left: 50%;
+          top: 49%;
 
           transform: translate(-50%, -50%);
+
+          width: 48px;
+          height: 48px;
 
           display: grid;
           place-items: center;
 
           border-radius: 50%;
 
-          color: #bcfff0;
-          font-size: 12px;
+          color: #baffec;
+
+          font-size: 10px;
           font-weight: 900;
 
-          border: 1px solid rgba(69, 241, 191, 0.48);
+          border:
+            1px solid rgba(64, 235, 187, 0.55);
 
           background:
             radial-gradient(
               circle,
-              rgba(47, 229, 177, 0.22),
-              rgba(5, 32, 53, 0.78)
+              rgba(47, 223, 174, 0.24),
+              rgba(5, 30, 48, 0.86)
             );
 
           box-shadow:
-            0 0 28px rgba(44, 229, 177, 0.24);
+            0 0 25px rgba(43, 222, 175, 0.22);
         }
 
-        .mini-orbit {
+        .micro-orbit {
           position: absolute;
+
           left: 50%;
-          top: 52%;
+          top: 49%;
 
           border-radius: 50%;
 
           border:
-            1px solid rgba(55, 145, 255, 0.24);
-
-          animation: miniSpin 9s linear infinite;
+            1px solid rgba(45, 142, 255, 0.26);
         }
 
-        .mini-orbit.o1 {
-          width: 185px;
-          height: 82px;
+        .micro-orbit.one {
+          width: 163px;
+          height: 67px;
 
-          transform: translate(-50%, -50%) rotate(-13deg);
+          animation:
+            orbitOne 11s linear infinite;
         }
 
-        .mini-orbit.o2 {
-          width: 175px;
-          height: 68px;
+        .micro-orbit.two {
+          width: 153px;
+          height: 58px;
 
-          transform: translate(-50%, -50%) rotate(22deg);
-
-          animation-duration: 13s;
-          animation-direction: reverse;
+          animation:
+            orbitTwo 15s linear infinite reverse;
         }
 
-        @keyframes miniSpin {
+        @keyframes orbitOne {
+          from {
+            transform:
+              translate(-50%, -50%)
+              rotate(-15deg);
+          }
+
           to {
-            rotate: 360deg;
+            transform:
+              translate(-50%, -50%)
+              rotate(345deg);
           }
         }
 
-        .mini-particle {
+        @keyframes orbitTwo {
+          from {
+            transform:
+              translate(-50%, -50%)
+              rotate(25deg);
+          }
+
+          to {
+            transform:
+              translate(-50%, -50%)
+              rotate(385deg);
+          }
+        }
+
+        .mini-dot {
           position: absolute;
 
-          width: 6px;
-          height: 6px;
+          width: 5px;
+          height: 5px;
 
           border-radius: 50%;
 
-          background: #76eaff;
+          background: #7cecff;
 
           box-shadow:
-            0 0 8px #76eaff,
-            0 0 16px #1c8aff;
+            0 0 8px #7cecff,
+            0 0 15px #258bff;
         }
 
-        .mp1 {
-          left: 30%;
-          top: 33%;
-          animation: particlePulse 2.2s ease-in-out infinite;
+        .mini-dot.d1 {
+          left: 29%;
+          top: 34%;
         }
 
-        .mp2 {
+        .mini-dot.d2 {
           right: 25%;
           top: 29%;
-          animation: particlePulse 2.2s ease-in-out infinite 0.7s;
         }
 
-        .mp3 {
+        .mini-dot.d3 {
           right: 31%;
           bottom: 22%;
-          animation: particlePulse 2.2s ease-in-out infinite 1.3s;
         }
 
-        @keyframes particlePulse {
-          50% {
-            opacity: 0.3;
-            transform: scale(0.6);
-          }
-        }
+        .auth-register,
+        .auth-login {
+          position: relative;
+          z-index: 3;
 
-        .register-btn,
-        .login-btn {
           width: 100%;
-          min-height: 55px;
+          min-height: 52px;
 
-          border-radius: 14px;
+          border-radius: 13px;
 
           cursor: pointer;
 
-          font-size: 13px;
-          font-weight: 800;
+          font-size: 11px;
+          font-weight: 900;
 
           transition:
             transform 0.18s ease,
-            filter 0.18s ease,
-            border-color 0.18s ease;
+            filter 0.18s ease;
         }
 
-        .register-btn {
-          border: none;
+        .auth-register {
+          border: 0;
+
           color: white;
 
           background:
             linear-gradient(
               100deg,
               #176eff,
-              #22bfff 52%,
-              #24dba6
+              #23c3ff 54%,
+              #25dba7
             );
 
           box-shadow:
-            0 15px 35px rgba(19, 128, 255, 0.17);
+            0 13px 32px rgba(20, 127, 255, 0.16);
         }
 
-        .login-btn {
-          margin-top: 11px;
+        .auth-login {
+          margin-top: 10px;
 
-          color: #dbe9f7;
+          border:
+            1px solid rgba(98, 156, 211, 0.23);
 
-          border: 1px solid rgba(101, 159, 216, 0.24);
+          color: #d7e7f7;
 
           background:
-            rgba(4, 19, 39, 0.54);
+            rgba(3, 17, 36, 0.54);
         }
 
-        .register-btn:hover,
-        .login-btn:hover {
+        .auth-register:hover,
+        .auth-login:hover {
           transform: translateY(-1px);
-          filter: brightness(1.07);
-        }
-
-        .login-btn:hover {
-          border-color: rgba(73, 183, 255, 0.48);
+          filter: brightness(1.08);
         }
 
         .languages {
+          position: relative;
+          z-index: 3;
+
           display: flex;
           justify-content: center;
-          gap: 4px;
+          gap: 3px;
 
-          margin-top: 18px;
+          margin-top: 15px;
         }
 
-        .lang {
-          padding: 5px 8px;
+        .language-button {
+          padding: 4px 7px;
 
-          border: none;
+          border: 0;
 
           background: transparent;
-          color: #647b94;
+
+          color: #637991;
 
           cursor: pointer;
 
-          font-size: 10px;
+          font-size: 9px;
         }
 
-        .lang.active {
+        .language-button.active {
           color: var(--green);
+          font-weight: 800;
         }
 
-        /* RIGHT / GLOBE */
+        /* GLOBE */
 
         .visual-zone {
           position: relative;
-          min-height: 600px;
+          min-height: 535px;
         }
 
-        .globe-wrap {
+        .globe-system {
           position: absolute;
+
           left: 50%;
           top: 50%;
 
-          width: min(560px, 100%);
+          width: min(500px, 100%);
+
           aspect-ratio: 1;
 
           transform: translate(-50%, -50%);
         }
 
-        .globe-halo {
-          position: absolute;
-          inset: -12%;
-
-          border-radius: 50%;
-
-          background:
-            radial-gradient(
-              circle,
-              rgba(31, 132, 255, 0.1),
-              transparent 67%
-            );
-
-          animation: haloPulse 4s ease-in-out infinite;
-        }
-
-        @keyframes haloPulse {
-          50% {
-            transform: scale(1.05);
-            opacity: 0.65;
-          }
-        }
-
-        .globe {
-          position: absolute;
-          inset: 12%;
-
-          border-radius: 50%;
-
-          overflow: hidden;
-
-          border: 1px solid rgba(65, 161, 255, 0.44);
-
-          background:
-            radial-gradient(
-              circle at 35% 31%,
-              rgba(45, 169, 255, 0.2),
-              transparent 23%
-            ),
-            radial-gradient(
-              circle at center,
-              #082a55,
-              #031429 58%,
-              #020914
-            );
-
-          box-shadow:
-            0 0 70px rgba(17, 122, 255, 0.28),
-            inset 0 0 80px rgba(23, 129, 255, 0.15);
-        }
-
-        .globe-lines {
+        .globe-glow {
           position: absolute;
           inset: -15%;
 
           border-radius: 50%;
 
           background:
-            repeating-radial-gradient(
-              ellipse at center,
-              transparent 0 31px,
-              rgba(83, 154, 226, 0.11) 32px 33px
+            radial-gradient(
+              circle,
+              rgba(25, 127, 255, 0.12),
+              transparent 62%
             );
 
-          animation: globeSpin 24s linear infinite;
+          animation:
+            glowBreath 4.5s ease-in-out infinite;
         }
 
-        .globe-lines::before {
-          content: "";
+        @keyframes glowBreath {
+          50% {
+            transform: scale(1.06);
+            opacity: 0.65;
+          }
+        }
+
+        .globe {
           position: absolute;
-          inset: 0;
+          inset: 14%;
+
+          overflow: hidden;
+
+          border-radius: 50%;
+
+          border:
+            1px solid rgba(72, 157, 244, 0.48);
+
+          background:
+            radial-gradient(
+              circle at 36% 30%,
+              rgba(61, 179, 255, 0.18),
+              transparent 22%
+            ),
+            radial-gradient(
+              circle at center,
+              #082752,
+              #031429 59%,
+              #020914
+            );
+
+          box-shadow:
+            0 0 70px rgba(19, 125, 255, 0.25),
+            inset 0 0 75px rgba(24, 128, 255, 0.16);
+        }
+
+        .latitudes {
+          position: absolute;
+          inset: -7%;
+
+          border-radius: 50%;
+
+          background:
+            repeating-radial-gradient(
+              ellipse at center,
+              transparent 0 28px,
+              rgba(74, 151, 225, 0.11) 29px 30px
+            );
+
+          animation:
+            globeRotate 28s linear infinite;
+        }
+
+        .longitudes {
+          position: absolute;
+          inset: -10%;
+
+          border-radius: 50%;
 
           background:
             repeating-linear-gradient(
               90deg,
-              transparent 0 46px,
-              rgba(70, 145, 218, 0.08) 47px 48px
+              transparent 0 47px,
+              rgba(72, 147, 220, 0.07) 48px 49px
             );
+
+          animation:
+            globeRotateReverse 35s linear infinite;
         }
 
-        @keyframes globeSpin {
+        @keyframes globeRotate {
           to {
             transform: rotate(360deg);
           }
         }
 
-        .uz-node {
+        @keyframes globeRotateReverse {
+          to {
+            transform: rotate(-360deg);
+          }
+        }
+
+        .uz-center {
           position: absolute;
+
           left: 50%;
           top: 51%;
 
-          width: 82px;
-          height: 82px;
-
           transform: translate(-50%, -50%);
+
+          width: 72px;
+          height: 72px;
 
           display: grid;
           place-items: center;
@@ -926,143 +970,165 @@ function Auth() {
           border-radius: 50%;
 
           color: white;
+
+          font-size: 11px;
           font-weight: 900;
           letter-spacing: 1px;
 
-          border: 1px solid rgba(61, 242, 190, 0.64);
+          border:
+            1px solid rgba(61, 240, 190, 0.66);
 
           background:
             radial-gradient(
               circle,
-              rgba(41, 224, 171, 0.29),
-              rgba(5, 36, 55, 0.8)
+              rgba(43, 222, 174, 0.3),
+              rgba(5, 34, 52, 0.88)
             );
 
           box-shadow:
-            0 0 28px rgba(49, 230, 177, 0.48),
-            0 0 70px rgba(13, 137, 255, 0.25);
+            0 0 26px rgba(50, 228, 179, 0.47),
+            0 0 60px rgba(19, 130, 255, 0.21);
         }
 
-        .trade-ring {
+        .orbit-ring {
           position: absolute;
+
           left: 50%;
           top: 50%;
 
+          transform:
+            translate(-50%, -50%);
+
           border-radius: 50%;
 
-          border: 1px solid rgba(51, 150, 255, 0.25);
-
-          transform: translate(-50%, -50%);
+          border:
+            1px solid rgba(60, 148, 236, 0.22);
         }
 
-        .trade-ring.r1 {
-          width: 73%;
-          height: 43%;
+        .orbit-ring.one {
+          width: 76%;
+          height: 42%;
 
-          animation: ringSpin 15s linear infinite;
+          animation:
+            tradeRingOne 16s linear infinite;
         }
 
-        .trade-ring.r2 {
-          width: 86%;
-          height: 54%;
+        .orbit-ring.two {
+          width: 85%;
+          height: 52%;
 
-          transform: translate(-50%, -50%) rotate(42deg);
-
-          animation: ringSpinTwo 20s linear infinite reverse;
+          animation:
+            tradeRingTwo 22s linear infinite reverse;
         }
 
-        @keyframes ringSpin {
+        @keyframes tradeRingOne {
+          from {
+            transform:
+              translate(-50%, -50%)
+              rotate(-11deg);
+          }
+
           to {
             transform:
               translate(-50%, -50%)
-              rotate(360deg);
+              rotate(349deg);
           }
         }
 
-        @keyframes ringSpinTwo {
+        @keyframes tradeRingTwo {
+          from {
+            transform:
+              translate(-50%, -50%)
+              rotate(38deg);
+          }
+
           to {
             transform:
               translate(-50%, -50%)
-              rotate(402deg);
+              rotate(398deg);
           }
         }
 
-        .market {
+        .marketplace {
           position: absolute;
 
-          padding: 10px 14px;
+          padding: 9px 13px;
 
-          border-radius: 13px;
+          border-radius: 12px;
 
           color: #eaf5ff;
 
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 800;
 
-          border: 1px solid rgba(71, 155, 239, 0.24);
+          white-space: nowrap;
+
+          border:
+            1px solid rgba(70, 150, 233, 0.25);
 
           background:
-            rgba(4, 19, 40, 0.82);
+            rgba(3, 18, 39, 0.88);
 
           backdrop-filter: blur(10px);
 
           box-shadow:
-            0 12px 35px rgba(0,0,0,0.24);
+            0 10px 26px rgba(0,0,0,0.25);
 
-          animation: floatBadge 5s ease-in-out infinite;
+          animation:
+            badgeFloat 4.8s ease-in-out infinite;
         }
 
-        .market:nth-of-type(even) {
-          animation-delay: -2.3s;
+        .marketplace:nth-child(even) {
+          animation-delay: -2.1s;
         }
 
-        @keyframes floatBadge {
+        @keyframes badgeFloat {
           50% {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
           }
         }
 
-        .market.amazon {
-          top: 4%;
+        .marketplace.amazon {
+          top: 3%;
           left: 43%;
         }
 
-        .market.ebay {
-          top: 15%;
-          right: 3%;
+        .marketplace.ebay {
+          top: 13%;
+          right: 2%;
         }
 
-        .market.walmart {
+        .marketplace.walmart {
           top: 39%;
-          right: -2%;
+          right: -1%;
         }
 
-        .market.shopify {
-          bottom: 24%;
-          right: 3%;
+        .marketplace.shopify {
+          bottom: 25%;
+          right: 2%;
         }
 
-        .market.mercari {
+        .marketplace.mercari {
           bottom: 6%;
           right: 24%;
         }
 
-        .market.poshmark {
-          bottom: 3%;
-          left: 26%;
+        .marketplace.poshmark {
+          bottom: 2%;
+          left: 27%;
         }
 
-        .market.bonanza {
-          bottom: 21%;
-          left: -1%;
+        .marketplace.bonanza {
+          bottom: 23%;
+          left: 0;
         }
 
-        .market.google {
+        .marketplace.google {
           top: 23%;
-          left: 0%;
+          left: 0;
         }
 
-        .energy {
+        .energy-pulse {
           position: absolute;
 
           width: 7px;
@@ -1070,30 +1136,34 @@ function Auth() {
 
           border-radius: 50%;
 
-          background: #9bfaff;
+          background: #a0faff;
 
           box-shadow:
-            0 0 8px #9bfaff,
-            0 0 17px #289aff,
-            0 0 27px #37e5b0;
+            0 0 8px #a0faff,
+            0 0 17px #278fff,
+            0 0 25px #35e0b0;
 
           opacity: 0;
         }
 
-        .e1 {
-          animation: energyOne 3.7s linear infinite;
+        .energy-pulse.one {
+          animation:
+            energyOne 3.7s linear infinite;
         }
 
-        .e2 {
-          animation: energyTwo 4.6s linear infinite 0.8s;
+        .energy-pulse.two {
+          animation:
+            energyTwo 4.5s linear infinite 1s;
         }
 
-        .e3 {
-          animation: energyThree 4.1s linear infinite 1.7s;
+        .energy-pulse.three {
+          animation:
+            energyThree 4s linear infinite 1.8s;
         }
 
-        .e4 {
-          animation: energyFour 5.2s linear infinite 2.2s;
+        .energy-pulse.four {
+          animation:
+            energyFour 5s linear infinite 2.4s;
         }
 
         @keyframes energyOne {
@@ -1103,12 +1173,12 @@ function Auth() {
             opacity: 0;
           }
 
-          14% {
+          15% {
             opacity: 1;
           }
 
           100% {
-            left: 68%;
+            left: 67%;
             top: 8%;
             opacity: 0;
           }
@@ -1121,13 +1191,13 @@ function Auth() {
             opacity: 0;
           }
 
-          14% {
+          15% {
             opacity: 1;
           }
 
           100% {
             left: 91%;
-            top: 37%;
+            top: 38%;
             opacity: 0;
           }
         }
@@ -1139,13 +1209,13 @@ function Auth() {
             opacity: 0;
           }
 
-          14% {
+          15% {
             opacity: 1;
           }
 
           100% {
-            left: 79%;
-            top: 83%;
+            left: 76%;
+            top: 84%;
             opacity: 0;
           }
         }
@@ -1157,13 +1227,13 @@ function Auth() {
             opacity: 0;
           }
 
-          14% {
+          15% {
             opacity: 1;
           }
 
           100% {
             left: 10%;
-            top: 65%;
+            top: 62%;
             opacity: 0;
           }
         }
@@ -1182,108 +1252,114 @@ function Auth() {
           padding: 24px;
 
           background:
-            rgba(0, 6, 17, 0.84);
+            rgba(0, 6, 18, 0.84);
 
-          backdrop-filter: blur(18px);
+          backdrop-filter: blur(20px);
         }
 
         .phone-panel {
-          width: min(430px, 100%);
+          width: min(425px, 100%);
 
-          padding: 28px;
+          padding: 29px;
 
-          border-radius: 28px;
+          border-radius: 27px;
 
-          border:
-            1px solid rgba(79, 156, 234, 0.28);
+          color: white;
 
           background:
             linear-gradient(
               150deg,
-              rgba(12, 37, 70, 0.96),
-              rgba(3, 15, 33, 0.99)
+              rgba(12, 37, 70, 0.97),
+              rgba(3, 15, 34, 0.99)
             );
+
+          border:
+            1px solid rgba(85, 157, 227, 0.28);
 
           box-shadow:
             0 35px 120px rgba(0,0,0,0.58);
-
-          color: white;
         }
 
-        .phone-back {
-          border: none;
-          background: transparent;
-          color: #7790aa;
-
-          cursor: pointer;
+        .back-button {
           padding: 0;
 
-          font-size: 12px;
+          border: 0;
+
+          background: transparent;
+
+          color: #7289a2;
+
+          cursor: pointer;
+
+          font-size: 11px;
         }
 
-        .phone-head {
-          margin-top: 28px;
+        .phone-header {
           text-align: center;
+
+          margin-top: 25px;
         }
 
-        .phone-symbol {
-          width: 54px;
-          height: 54px;
+        .phone-logo {
+          width: 52px;
+          height: 52px;
 
-          margin: 0 auto 17px;
+          margin: 0 auto 16px;
 
           display: grid;
           place-items: center;
 
-          border-radius: 16px;
+          border-radius: 15px;
 
-          font-size: 13px;
+          font-size: 12px;
           font-weight: 900;
 
           background:
             linear-gradient(
               135deg,
-              #1778ff,
-              #27ddb0
+              #1777ff,
+              #27dcb0
             );
         }
 
-        .phone-head h2 {
+        .phone-header h2 {
           margin: 0;
 
-          font-size: 25px;
+          font-size: 24px;
         }
 
-        .phone-head p {
-          margin: 9px 0 24px;
+        .phone-header p {
+          margin: 8px 0 22px;
 
           color: #8198b1;
-          font-size: 13px;
+
+          font-size: 12px;
         }
 
         .phone-input-wrap {
           display: flex;
           align-items: center;
 
-          min-height: 58px;
+          min-height: 57px;
 
-          margin-bottom: 14px;
+          margin-bottom: 13px;
 
           overflow: hidden;
 
-          border-radius: 14px;
+          border-radius: 13px;
 
           border:
-            1px solid rgba(93, 157, 217, 0.25);
+            1px solid rgba(94, 158, 218, 0.25);
 
           background:
-            rgba(1, 13, 29, 0.74);
+            rgba(1, 13, 29, 0.75);
         }
 
         .country-code {
-          padding: 0 15px;
+          padding: 0 14px;
 
-          color: #dcecff;
+          color: #d9eaff;
+
           font-size: 14px;
           font-weight: 700;
 
@@ -1295,55 +1371,57 @@ function Auth() {
           flex: 1;
           min-width: 0;
 
-          padding: 17px 14px;
+          padding: 16px 14px;
 
-          border: none;
-          outline: none;
+          border: 0;
+          outline: 0;
 
           color: white;
+
           background: transparent;
 
           font-size: 17px;
         }
 
-        .phone-continue {
+        .continue-button {
           width: 100%;
-          min-height: 55px;
+          min-height: 54px;
 
-          border: none;
-          border-radius: 14px;
+          border: 0;
+          border-radius: 13px;
 
           color: white;
+
+          cursor: pointer;
+
+          font-size: 11px;
+          font-weight: 900;
 
           background:
             linear-gradient(
               100deg,
               #176eff,
-              #25c5ff 55%,
-              #25dba6
+              #23c4ff 54%,
+              #25dba7
             );
-
-          font-size: 12px;
-          font-weight: 900;
-
-          cursor: pointer;
         }
 
-        .phone-continue:disabled {
+        .continue-button:disabled {
           opacity: 0.38;
           cursor: not-allowed;
         }
 
         .phone-security {
           display: flex;
-          align-items: center;
           justify-content: center;
+          align-items: center;
           gap: 7px;
 
-          margin-top: 17px;
+          margin-top: 16px;
 
-          color: #657c94;
-          font-size: 10px;
+          color: #647c95;
+
+          font-size: 9px;
         }
 
         .phone-security svg {
@@ -1353,45 +1431,51 @@ function Auth() {
 
         /* RESPONSIVE */
 
-        @media (max-width: 1180px) {
+        @media (max-width: 1200px) {
+          .shell {
+            width: min(1120px, calc(100% - 44px));
+          }
+
           .hero {
-            grid-template-columns: 1fr 0.9fr;
+            grid-template-columns:
+              minmax(0, 1fr)
+              minmax(320px, 0.82fr);
+
+            gap: 36px;
           }
 
           .visual-zone {
             grid-column: 1 / -1;
-            min-height: 500px;
-          }
-
-          .copy-zone {
-            justify-self: center;
+            min-height: 470px;
           }
         }
 
         @media (max-width: 760px) {
           .shell {
-            width: min(100% - 28px, 680px);
+            width: min(680px, calc(100% - 28px));
           }
 
-          .nav-chip,
-          .brand-description {
+          .brand-company,
+          .award-chip {
             display: none;
           }
 
           .hero {
             grid-template-columns: 1fr;
-
-            gap: 32px;
-            padding-top: 52px;
+            gap: 34px;
+            padding-top: 50px;
           }
 
           .copy-zone {
+            max-width: none;
             text-align: center;
           }
 
-          .main-title {
-            font-size: clamp(46px, 14vw, 68px);
-            letter-spacing: -3px;
+          .hero-title {
+            margin-inline: auto;
+
+            font-size:
+              clamp(45px, 13vw, 65px);
           }
 
           .hero-description {
@@ -1399,20 +1483,19 @@ function Auth() {
             margin-right: auto;
           }
 
-          .stats-row {
-            text-align: left;
-          }
-
           .auth-panel {
-            width: min(100%, 460px);
-            margin: auto;
+            max-width: 430px;
           }
 
           .visual-zone {
-            min-height: 430px;
+            min-height: 410px;
           }
 
-          .market {
+          .globe-system {
+            width: min(430px, 95vw);
+          }
+
+          .marketplace {
             padding: 7px 9px;
             font-size: 8px;
           }
@@ -1420,18 +1503,18 @@ function Auth() {
       `}</style>
 
       <main className="ecwt-page">
-        <div className="grid-background" />
-        <div className="aurora aurora-one" />
-        <div className="aurora aurora-two" />
+        <div className="bg-grid" />
+        <div className="ambient ambient-one" />
+        <div className="ambient ambient-two" />
 
         <div className="shell">
           <nav className="nav">
             <div className="brand">
               <div className="brand-symbol">ECWT</div>
 
-              <div className="brand-word">ECWT</div>
+              <div className="brand-name">ECWT</div>
 
-              <div className="brand-description">
+              <div className="brand-company">
                 O‘ZBEKISTON
                 <br />
                 ELEKTRON TIJORAT
@@ -1440,23 +1523,22 @@ function Auth() {
               </div>
             </div>
 
-            <div className="nav-chip">
-              <span className="live-dot" />
-              {t.trusted}
+            <div className="award-chip">
+              <span className="award-dot" />
+              {t.badge}
             </div>
           </nav>
 
           <section className="hero">
-            <div className="copy-zone">
+            <section className="copy-zone">
               <div className="eyebrow">
-                <span className="eyebrow-line" />
                 {t.eyebrow}
               </div>
 
-              <h1 className="main-title">
+              <h1 className="hero-title">
                 {t.title1}
-                <br />
-                <span className="gradient-title">
+
+                <span className="hero-gradient">
                   {t.title2}
                 </span>
               </h1>
@@ -1465,122 +1547,158 @@ function Auth() {
                 {t.description}
               </p>
 
-              <div className="stats-row">
+              <div className="stats">
                 <div className="stat">
                   <div className="stat-value">9+</div>
-                  <div className="stat-label">{t.stat1}</div>
+                  <div className="stat-label">
+                    {t.stat1}
+                  </div>
                 </div>
 
                 <div className="stat">
-                  <div className="stat-value">25 000+</div>
-                  <div className="stat-label">{t.stat2}</div>
+                  <div className="stat-value">
+                    25 000+
+                  </div>
+
+                  <div className="stat-label">
+                    {t.stat2}
+                  </div>
                 </div>
 
                 <div className="stat">
                   <div className="stat-value">AI</div>
-                  <div className="stat-label">{t.stat3}</div>
+
+                  <div className="stat-label">
+                    {t.stat3}
+                  </div>
                 </div>
               </div>
 
-              <div className="trust-line">
+              <div className="secure-line">
                 <ShieldIcon />
                 <span>{t.secure}</span>
               </div>
-            </div>
+            </section>
 
-            <div className="auth-panel">
-              <div className="auth-head">
-                <h2 className="auth-logo">ECWT</h2>
+            <section className="auth-panel">
+              <div className="auth-content">
+                <h2 className="auth-logo">
+                  ECWT
+                </h2>
 
                 <div className="auth-subtitle">
                   Global commerce. One intelligent platform.
                 </div>
-              </div>
 
-              <div className="network-mini">
-                <div className="mini-radar" />
+                <div className="micro-network">
+                  <div className="network-circle" />
 
-                <div className="mini-orbit o1" />
-                <div className="mini-orbit o2" />
+                  <div className="micro-orbit one" />
+                  <div className="micro-orbit two" />
 
-                <div className="mini-core">UZ</div>
+                  <div className="network-core">
+                    UZ
+                  </div>
 
-                <div className="mini-particle mp1" />
-                <div className="mini-particle mp2" />
-                <div className="mini-particle mp3" />
-              </div>
-
-              <button
-                className="register-btn"
-                onClick={() => openPhone("register")}
-              >
-                {t.register}
-              </button>
-
-              <button
-                className="login-btn"
-                onClick={() => openPhone("login")}
-              >
-                {t.login}
-              </button>
-
-              <div className="languages">
-                <button
-                  className={`lang ${
-                    language === "uz" ? "active" : ""
-                  }`}
-                  onClick={() => setLanguage("uz")}
-                >
-                  O‘zbekcha
-                </button>
-
-                <button
-                  className={`lang ${
-                    language === "ru" ? "active" : ""
-                  }`}
-                  onClick={() => setLanguage("ru")}
-                >
-                  Русский
-                </button>
-
-                <button
-                  className={`lang ${
-                    language === "en" ? "active" : ""
-                  }`}
-                  onClick={() => setLanguage("en")}
-                >
-                  English
-                </button>
-              </div>
-            </div>
-
-            <div className="visual-zone">
-              <div className="globe-wrap">
-                <div className="globe-halo" />
-
-                <div className="globe">
-                  <div className="globe-lines" />
-                  <div className="uz-node">UZ</div>
+                  <div className="mini-dot d1" />
+                  <div className="mini-dot d2" />
+                  <div className="mini-dot d3" />
                 </div>
 
-                <div className="trade-ring r1" />
-                <div className="trade-ring r2" />
+                <button
+                  className="auth-register"
+                  onClick={() =>
+                    openPhone("register")
+                  }
+                >
+                  {t.register}
+                </button>
 
-                {marketplaces.map((market) => (
-                  <div
-                    key={market.name}
-                    className={`market ${market.className}`}
+                <button
+                  className="auth-login"
+                  onClick={() =>
+                    openPhone("login")
+                  }
+                >
+                  {t.login}
+                </button>
+
+                <div className="languages">
+                  <button
+                    className={`language-button ${
+                      language === "uz"
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setLanguage("uz")
+                    }
                   >
-                    {market.name}
-                  </div>
-                ))}
+                    O‘zbekcha
+                  </button>
 
-                <div className="energy e1" />
-                <div className="energy e2" />
-                <div className="energy e3" />
-                <div className="energy e4" />
+                  <button
+                    className={`language-button ${
+                      language === "ru"
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setLanguage("ru")
+                    }
+                  >
+                    Русский
+                  </button>
+
+                  <button
+                    className={`language-button ${
+                      language === "en"
+                        ? "active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setLanguage("en")
+                    }
+                  >
+                    English
+                  </button>
+                </div>
               </div>
-            </div>
+            </section>
+
+            <section className="visual-zone">
+              <div className="globe-system">
+                <div className="globe-glow" />
+
+                <div className="globe">
+                  <div className="latitudes" />
+                  <div className="longitudes" />
+
+                  <div className="uz-center">
+                    UZ
+                  </div>
+                </div>
+
+                <div className="orbit-ring one" />
+                <div className="orbit-ring two" />
+
+                {marketplaces.map(
+                  (marketplace) => (
+                    <div
+                      key={marketplace.name}
+                      className={`marketplace ${marketplace.cls}`}
+                    >
+                      {marketplace.name}
+                    </div>
+                  )
+                )}
+
+                <div className="energy-pulse one" />
+                <div className="energy-pulse two" />
+                <div className="energy-pulse three" />
+                <div className="energy-pulse four" />
+              </div>
+            </section>
           </section>
         </div>
 
@@ -1588,14 +1706,18 @@ function Auth() {
           <div className="overlay">
             <div className="phone-panel">
               <button
-                className="phone-back"
-                onClick={() => setStep("welcome")}
+                className="back-button"
+                onClick={() =>
+                  setStep("welcome")
+                }
               >
                 ← {t.back}
               </button>
 
-              <div className="phone-head">
-                <div className="phone-symbol">ECWT</div>
+              <div className="phone-header">
+                <div className="phone-logo">
+                  ECWT
+                </div>
 
                 <h2>
                   {mode === "register"
@@ -1607,7 +1729,9 @@ function Auth() {
               </div>
 
               <div className="phone-input-wrap">
-                <span className="country-code">+998</span>
+                <span className="country-code">
+                  +998
+                </span>
 
                 <input
                   className="phone-input"
@@ -1615,7 +1739,10 @@ function Auth() {
                   onChange={(e) =>
                     setPhone(
                       e.target.value
-                        .replace(/[^0-9 ]/g, "")
+                        .replace(
+                          /[^0-9 ]/g,
+                          ""
+                        )
                         .slice(0, 12)
                     )
                   }
@@ -1626,10 +1753,14 @@ function Auth() {
               </div>
 
               <button
-                className="phone-continue"
-                disabled={cleanPhone.length < 9}
+                className="continue-button"
+                disabled={
+                  cleanPhone.length < 9
+                }
                 onClick={() =>
-                  alert("Keyingi bosqich: SMS tasdiqlash")
+                  alert(
+                    "Keyingi bosqich: SMS tasdiqlash"
+                  )
                 }
               >
                 {t.continue}
