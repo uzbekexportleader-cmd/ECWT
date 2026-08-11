@@ -1917,191 +1917,82 @@ button {
 }
 
 /* =========================================================
-   ECWT AUTH — REFERENCE DESKTOP OVERRIDE
+   ECWT AUTH — FINAL REFERENCE DESKTOP
    ========================================================= */
-
 @media (min-width: 1281px) {
   .auth-page {
-    height: 100vh;
-    min-height: 820px;
+    min-height: 100vh;
     background:
-      radial-gradient(circle at 51% 43%, rgba(92, 24, 220, .16), transparent 35%),
-      radial-gradient(circle at 82% 40%, rgba(67, 20, 185, .13), transparent 28%),
-      linear-gradient(180deg, #030416 0%, #030316 54%, #05051c 100%);
+      radial-gradient(circle at 50% 36%, rgba(77, 21, 198, .16), transparent 35%),
+      radial-gradient(circle at 79% 34%, rgba(62, 18, 175, .11), transparent 28%),
+      linear-gradient(180deg, #030416 0%, #030316 52%, #05051c 100%);
   }
 
   .auth-header {
-    height: 118px;
-    padding: 31px 3.1% 0;
+    height: 120px;
+    padding: 32px 3.1% 0;
   }
 
   .auth-main {
-    min-height: 610px;
-    padding: 14px 3.35% 0;
-    grid-template-columns: minmax(0, 1fr) 405px;
-    gap: 38px;
-    align-items: center;
-  }
-
-  .auth-hero {
-    align-self: center;
+    min-height: calc(100vh - 262px);
+    padding: 30px 3.35% 4px;
+    grid-template-columns: minmax(0, 1fr) 414px;
+    gap: 40px;
   }
 
   .auth-hero__content {
-    max-width: 465px;
-    transform: translateY(-4px);
-  }
-
-  .auth-eyebrow {
-    margin-bottom: 27px;
-    font-size: 13px;
+    max-width: 455px;
+    transform: translateY(-8px);
   }
 
   .auth-title {
-    font-size: clamp(53px, 4vw, 66px);
+    font-size: clamp(50px, 3.65vw, 61px);
     line-height: .985;
   }
 
   .auth-description {
-    max-width: 405px;
-    margin-top: 28px;
+    margin-top: 27px;
   }
 
-  /* Large seamless map — not a small rectangular picture */
   .auth-world-map {
-    left: 25.2%;
+    left: 20.5%;
     top: 14.5%;
-    width: 49.5%;
+    width: 54%;
     height: 55%;
-    opacity: .84;
-    background-image: url("/auth-world-map-transparent2.png");
+    background-image: url("/auth-world-map-final.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 1;
     mix-blend-mode: screen;
-    filter: saturate(1.18) contrast(1.05) brightness(.88)
-            drop-shadow(0 0 18px rgba(104, 35, 255, .18));
-
-    -webkit-mask-image:
-      linear-gradient(to right, transparent 0%, #000 7%, #000 91%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, #000 7%, #000 89%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(to right, transparent 0%, #000 7%, #000 91%, transparent 100%);
-  }
-
-  .auth-bg__network {
-    opacity: .58;
-  }
-
-  .auth-bg__vignette {
-    background:
-      linear-gradient(90deg,
-        rgba(2,3,16,.24) 0%,
-        transparent 27%,
-        transparent 76%,
-        rgba(2,3,16,.26) 100%),
-      linear-gradient(180deg,
-        rgba(2,3,16,.04) 0%,
-        transparent 62%,
-        rgba(2,3,16,.22) 100%);
+    filter:
+      saturate(1.08)
+      contrast(1.02)
+      brightness(.98)
+      drop-shadow(0 0 15px rgba(115, 42, 255, .20));
+    animation: worldMapFloat 15s ease-in-out infinite alternate;
   }
 
   .auth-panel {
-    width: 405px;
-    transform: translateY(-2px);
+    width: 414px;
+    transform: translateY(-3px);
   }
 
   .auth-card {
-    min-height: 574px;
-    padding: 28px 27px 18px;
-    border-radius: 22px;
-  }
-
-  .auth-card__orb {
-    margin: 28px 0 17px;
-  }
-
-  .ecwt-orb {
-    width: 154px;
-    height: 154px;
-  }
-
-  .auth-card__actions {
-    margin-top: 21px;
-  }
-
-  .register-button {
-    height: 55px;
-  }
-
-  .login-button {
-    height: 52px;
-  }
-
-  .auth-language--card {
-    margin-top: 14px;
+    min-height: 590px;
+    padding: 31px 28px 20px;
   }
 
   .auth-footer {
-    padding: 2px 3.55% 25px;
-    gap: 30px;
-  }
-
-  .auth-stats {
-    min-width: 515px;
-    gap: 27px;
+    padding: 5px 3.55% 26px;
   }
 
   .marketplace-row {
-    max-width: 790px;
-    gap: 16px;
+    max-width: 805px;
+    gap: 17px;
   }
 
   .marketplace-box {
-    height: 80px;
-  }
-
-  .auth-wave--1 {
-    width: 78%;
-    height: 205px;
-    left: -13%;
-    bottom: -1%;
-  }
-
-  .auth-wave--2 {
-    width: 76%;
-    height: 235px;
-    left: 17%;
-    bottom: -9%;
-  }
-
-  .auth-wave--3 {
-    width: 50%;
-    height: 190px;
-    right: -10%;
-    bottom: -1%;
-  }
-}
-
-/* Reference viewport tuning */
-@media (min-width: 1500px) and (min-height: 850px) {
-  .auth-main {
-    min-height: 625px;
-  }
-
-  .auth-world-map {
-    left: 24.5%;
-    top: 14%;
-    width: 50.5%;
-    height: 56.5%;
-  }
-
-  .auth-panel {
-    width: 410px;
-  }
-
-  .auth-card {
-    min-height: 580px;
+    height: 84px;
   }
 }
