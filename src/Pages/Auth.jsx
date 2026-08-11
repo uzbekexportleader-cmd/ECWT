@@ -250,50 +250,7 @@ function Auth() {
           public/auth-world-map.png ishlatiladi.
           CSS uni to‘rtburchak ko‘rinmasligi uchun crop + mask + blend qiladi.
         */}
-        
         <div className="auth-world-map" />
-
-        <svg
-          className="world-electric"
-          viewBox="0 0 1000 520"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <defs>
-            <filter id="electricGlow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="3.2" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-
-            <linearGradient id="electricStroke" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#6d34ff" />
-              <stop offset="45%" stopColor="#cf79ff" />
-              <stop offset="55%" stopColor="#ffffff" />
-              <stop offset="68%" stopColor="#b12cff" />
-              <stop offset="100%" stopColor="#6d34ff" />
-            </linearGradient>
-          </defs>
-
-          <g className="electric-routes">
-            <path className="electric-route route-a" d="M165 205 C260 180 325 190 405 235 S565 310 690 225 S805 155 900 210" />
-            <path className="electric-route route-b" d="M185 238 C300 290 390 302 495 248 S675 145 820 192" />
-            <path className="electric-route route-c" d="M245 165 C365 118 480 130 590 190 S750 295 870 252" />
-            <path className="electric-route route-d" d="M300 335 C420 298 510 300 620 344 S770 385 895 320" />
-            <path className="electric-route route-e" d="M410 210 C470 170 520 158 585 177 S705 235 790 185" />
-          </g>
-
-          <g className="electric-pulses" filter="url(#electricGlow)">
-            <path className="electric-pulse pulse-a" d="M165 205 C260 180 325 190 405 235 S565 310 690 225 S805 155 900 210" />
-            <path className="electric-pulse pulse-b" d="M185 238 C300 290 390 302 495 248 S675 145 820 192" />
-            <path className="electric-pulse pulse-c" d="M245 165 C365 118 480 130 590 190 S750 295 870 252" />
-            <path className="electric-pulse pulse-d" d="M300 335 C420 298 510 300 620 344 S770 385 895 320" />
-            <path className="electric-pulse pulse-e" d="M410 210 C470 170 520 158 585 177 S705 235 790 185" />
-          </g>
-        </svg>
-
 
         <div className="auth-wave auth-wave--1" />
         <div className="auth-wave auth-wave--2" />
