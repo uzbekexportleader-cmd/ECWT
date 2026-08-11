@@ -11,293 +11,346 @@ function Auth() {
   };
 
   return (
-    <div style={styles.page}>
-      <div style={styles.backgroundGlowOne} />
-      <div style={styles.backgroundGlowTwo} />
+    <div className="ecwt-auth">
+      <div className="ecwt-background" />
 
-      <div style={styles.card}>
-        {step === "welcome" && (
-          <>
-            <div style={styles.logoCircle}>ECWT</div>
+      <div className="energy-line energy-1" />
+      <div className="energy-line energy-2" />
+      <div className="energy-line energy-3" />
 
-            <h1 style={styles.title}>ECWT</h1>
+      {step === "welcome" && (
+        <div className="click-area">
+          <button
+            className="register-hotspot"
+            onClick={() => openPhoneStep("register")}
+            aria-label="Ro‘yxatdan o‘tish"
+          />
 
-            <h2 style={styles.subtitle}>
-              O‘zbekiston mahsulotlarini dunyoga soting
-            </h2>
+          <button
+            className="login-hotspot"
+            onClick={() => openPhoneStep("login")}
+            aria-label="Kirish"
+          />
+        </div>
+      )}
 
-            <p style={styles.description}>
-              Xalqaro savdoni boshlash endi oson.
-            </p>
-
+      {step === "phone" && (
+        <div className="phone-overlay">
+          <div className="phone-card">
             <button
-              style={styles.primaryButton}
-              onClick={() => openPhoneStep("register")}
-            >
-              RO‘YXATDAN O‘TISH
-            </button>
-
-            <button
-              style={styles.secondaryButton}
-              onClick={() => openPhoneStep("login")}
-            >
-              KIRISH
-            </button>
-
-            <div style={styles.languages}>
-              <button style={styles.languageButton}>🇺🇿 O‘zbekcha</button>
-              <button style={styles.languageButton}>🇷🇺 Русский</button>
-              <button style={styles.languageButton}>🇬🇧 English</button>
-            </div>
-          </>
-        )}
-
-        {step === "phone" && (
-          <>
-            <button
-              style={styles.backButton}
+              className="back-btn"
               onClick={() => setStep("welcome")}
             >
               ← Orqaga
             </button>
 
-            <div style={styles.logoSmall}>ECWT</div>
+            <div className="mini-logo">ECWT</div>
 
-            <h1 style={styles.phoneTitle}>
+            <h1>
               {mode === "register"
-                ? "ECWT’ga xush kelibsiz!"
+                ? "Ro‘yxatdan o‘tish"
                 : "ECWT’ga kirish"}
             </h1>
 
-            <p style={styles.phoneDescription}>
-              Telefon raqamingizni kiriting
-            </p>
+            <p>Telefon raqamingizni kiriting</p>
 
-            <div style={styles.phoneBox}>
-              <span style={styles.countryCode}>+998</span>
+            <div className="phone-input">
+              <span>+998</span>
 
               <input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="90 123 45 67"
-                style={styles.input}
                 inputMode="numeric"
               />
             </div>
 
             <button
-              style={{
-                ...styles.primaryButton,
-                opacity: phone.length >= 7 ? 1 : 0.5,
-              }}
+              className="continue-btn"
               disabled={phone.length < 7}
-              onClick={() => alert("Keyingi bosqich: SMS tasdiqlash")}
+              onClick={() =>
+                alert("Keyingi bosqich: SMS tasdiqlash")
+              }
             >
               DAVOM ETISH →
             </button>
 
-            <p style={styles.securityText}>
-              🔒 Ma’lumotlaringiz xavfsiz himoyalanadi
-            </p>
-          </>
-        )}
-      </div>
+            <small>🔒 Ma’lumotlaringiz xavfsiz himoyalanadi</small>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        * {
+          box-sizing: border-box;
+        }
+
+        .ecwt-auth {
+          position: relative;
+          width: 100%;
+          min-height: 100vh;
+          overflow: hidden;
+          background: #020914;
+        }
+
+        .ecwt-background {
+          position: absolute;
+          inset: -1.5%;
+          background-image: url("/5a0a29b6-117f-4a16-bc98-45f6ffaf07fc.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          animation: backgroundAlive 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes backgroundAlive {
+          0% {
+            transform: scale(1);
+            filter: brightness(0.96);
+          }
+
+          100% {
+            transform: scale(1.025);
+            filter: brightness(1.08);
+          }
+        }
+
+        .click-area {
+          position: absolute;
+          inset: 0;
+          z-index: 5;
+        }
+
+        .register-hotspot,
+        .login-hotspot {
+          position: absolute;
+          left: 36.4%;
+          width: 24.8%;
+          border: 0;
+          background: transparent;
+          cursor: pointer;
+          border-radius: 14px;
+        }
+
+        .register-hotspot {
+          top: 59.3%;
+          height: 6.6%;
+        }
+
+        .login-hotspot {
+          top: 68.1%;
+          height: 6.4%;
+        }
+
+        .register-hotspot:hover {
+          box-shadow:
+            0 0 20px rgba(0, 238, 190, 0.5),
+            inset 0 0 20px rgba(0, 238, 190, 0.15);
+        }
+
+        .login-hotspot:hover {
+          box-shadow:
+            0 0 18px rgba(35, 130, 255, 0.35),
+            inset 0 0 15px rgba(35, 130, 255, 0.12);
+        }
+
+        .energy-line {
+          position: absolute;
+          z-index: 3;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #61f6ff;
+          box-shadow:
+            0 0 8px #61f6ff,
+            0 0 18px #1677ff,
+            0 0 35px #00dfbd;
+          pointer-events: none;
+          opacity: 0;
+        }
+
+        .energy-1 {
+          animation: energyOne 4.5s linear infinite;
+        }
+
+        .energy-2 {
+          animation: energyTwo 5.5s linear infinite 1.3s;
+        }
+
+        .energy-3 {
+          animation: energyThree 4s linear infinite 2s;
+        }
+
+        @keyframes energyOne {
+          0% {
+            left: 47%;
+            top: 47%;
+            opacity: 0;
+          }
+          15% {
+            opacity: 1;
+          }
+          100% {
+            left: 82%;
+            top: 18%;
+            opacity: 0;
+          }
+        }
+
+        @keyframes energyTwo {
+          0% {
+            left: 48%;
+            top: 46%;
+            opacity: 0;
+          }
+          15% {
+            opacity: 1;
+          }
+          100% {
+            left: 91%;
+            top: 46%;
+            opacity: 0;
+          }
+        }
+
+        @keyframes energyThree {
+          0% {
+            left: 48%;
+            top: 47%;
+            opacity: 0;
+          }
+          15% {
+            opacity: 1;
+          }
+          100% {
+            left: 71%;
+            top: 8%;
+            opacity: 0;
+          }
+        }
+
+        .phone-overlay {
+          position: absolute;
+          inset: 0;
+          z-index: 20;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+          background: rgba(1, 8, 20, 0.72);
+          backdrop-filter: blur(13px);
+        }
+
+        .phone-card {
+          width: 100%;
+          max-width: 450px;
+          padding: 34px;
+          border-radius: 28px;
+          color: white;
+          text-align: center;
+          background:
+            linear-gradient(
+              145deg,
+              rgba(14, 39, 77, 0.95),
+              rgba(4, 18, 38, 0.96)
+            );
+          border: 1px solid rgba(85, 180, 255, 0.35);
+          box-shadow:
+            0 0 45px rgba(18, 112, 255, 0.16),
+            0 30px 80px rgba(0, 0, 0, 0.55);
+        }
+
+        .phone-card h1 {
+          margin: 20px 0 8px;
+          font-size: 30px;
+        }
+
+        .phone-card p {
+          color: #aebfd3;
+          margin-bottom: 25px;
+        }
+
+        .mini-logo {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          padding: 14px 20px;
+          border-radius: 16px;
+          font-weight: 900;
+          background: linear-gradient(135deg, #1677ff, #00d7a9);
+        }
+
+        .back-btn {
+          display: block;
+          border: 0;
+          color: #b7c7dc;
+          background: transparent;
+          cursor: pointer;
+        }
+
+        .phone-input {
+          display: flex;
+          align-items: center;
+          border-radius: 15px;
+          border: 1px solid rgba(255,255,255,0.2);
+          background: rgba(255,255,255,0.08);
+          overflow: hidden;
+          margin-bottom: 14px;
+        }
+
+        .phone-input span {
+          padding: 16px;
+          font-weight: 700;
+          border-right: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .phone-input input {
+          flex: 1;
+          min-width: 0;
+          padding: 16px;
+          border: 0;
+          outline: 0;
+          color: white;
+          font-size: 18px;
+          background: transparent;
+        }
+
+        .continue-btn {
+          width: 100%;
+          padding: 17px;
+          border: 0;
+          border-radius: 15px;
+          color: white;
+          font-weight: 800;
+          cursor: pointer;
+          background: linear-gradient(90deg, #1677ff, #00d6a5);
+        }
+
+        .continue-btn:disabled {
+          opacity: 0.45;
+          cursor: not-allowed;
+        }
+
+        .phone-card small {
+          display: block;
+          margin-top: 18px;
+          color: #879bb2;
+        }
+
+        @media (max-width: 800px) {
+          .ecwt-background {
+            background-size: auto 100%;
+          }
+
+          .register-hotspot,
+          .login-hotspot {
+            left: 34%;
+            width: 32%;
+          }
+        }
+      `}</style>
     </div>
   );
 }
-
-const styles = {
-  page: {
-    minHeight: "100vh",
-    background:
-      "radial-gradient(circle at top, #122c58 0%, #071426 45%, #030912 100%)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "24px",
-    position: "relative",
-    overflow: "hidden",
-    fontFamily: "Arial, sans-serif",
-  },
-
-  backgroundGlowOne: {
-    position: "absolute",
-    width: "420px",
-    height: "420px",
-    borderRadius: "50%",
-    background: "rgba(0, 132, 255, 0.16)",
-    filter: "blur(100px)",
-    top: "-150px",
-    right: "-100px",
-  },
-
-  backgroundGlowTwo: {
-    position: "absolute",
-    width: "350px",
-    height: "350px",
-    borderRadius: "50%",
-    background: "rgba(0, 255, 198, 0.10)",
-    filter: "blur(100px)",
-    bottom: "-160px",
-    left: "-120px",
-  },
-
-  card: {
-    width: "100%",
-    maxWidth: "470px",
-    background: "rgba(255,255,255,0.07)",
-    border: "1px solid rgba(255,255,255,0.14)",
-    borderRadius: "30px",
-    padding: "42px 32px",
-    backdropFilter: "blur(18px)",
-    boxShadow: "0 30px 80px rgba(0,0,0,0.35)",
-    textAlign: "center",
-    zIndex: 2,
-  },
-
-  logoCircle: {
-    width: "92px",
-    height: "92px",
-    margin: "0 auto 20px",
-    borderRadius: "24px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontWeight: "900",
-    fontSize: "22px",
-    color: "#ffffff",
-    background: "linear-gradient(135deg, #1677ff, #00cfa6)",
-    boxShadow: "0 15px 35px rgba(22,119,255,0.35)",
-  },
-
-  logoSmall: {
-    display: "inline-block",
-    padding: "10px 18px",
-    borderRadius: "14px",
-    background: "linear-gradient(135deg, #1677ff, #00cfa6)",
-    color: "#fff",
-    fontWeight: "900",
-    marginBottom: "24px",
-  },
-
-  title: {
-    color: "#ffffff",
-    fontSize: "42px",
-    margin: "0",
-    fontWeight: "900",
-  },
-
-  subtitle: {
-    color: "#ffffff",
-    fontSize: "25px",
-    lineHeight: "1.3",
-    margin: "16px 0 10px",
-  },
-
-  description: {
-    color: "#aebdd0",
-    fontSize: "16px",
-    marginBottom: "30px",
-  },
-
-  primaryButton: {
-    width: "100%",
-    padding: "17px",
-    border: "none",
-    borderRadius: "15px",
-    fontSize: "16px",
-    fontWeight: "800",
-    cursor: "pointer",
-    background: "linear-gradient(135deg, #1677ff, #00b894)",
-    color: "#ffffff",
-    marginBottom: "13px",
-    boxShadow: "0 10px 24px rgba(22,119,255,0.22)",
-  },
-
-  secondaryButton: {
-    width: "100%",
-    padding: "17px",
-    borderRadius: "15px",
-    fontSize: "16px",
-    fontWeight: "800",
-    cursor: "pointer",
-    background: "rgba(255,255,255,0.06)",
-    color: "#ffffff",
-    border: "1px solid rgba(255,255,255,0.20)",
-  },
-
-  languages: {
-    marginTop: "28px",
-    display: "flex",
-    gap: "7px",
-    justifyContent: "center",
-    flexWrap: "wrap",
-  },
-
-  languageButton: {
-    background: "transparent",
-    border: "none",
-    color: "#93a4ba",
-    cursor: "pointer",
-    fontSize: "13px",
-  },
-
-  backButton: {
-    position: "absolute",
-    background: "transparent",
-    border: "none",
-    color: "#9eb1c8",
-    cursor: "pointer",
-    fontSize: "14px",
-  },
-
-  phoneTitle: {
-    color: "#ffffff",
-    fontSize: "30px",
-    margin: "0 0 10px",
-  },
-
-  phoneDescription: {
-    color: "#aebdd0",
-    marginBottom: "28px",
-    fontSize: "16px",
-  },
-
-  phoneBox: {
-    display: "flex",
-    alignItems: "center",
-    width: "100%",
-    background: "rgba(255,255,255,0.08)",
-    border: "1px solid rgba(255,255,255,0.18)",
-    borderRadius: "15px",
-    padding: "4px",
-    marginBottom: "16px",
-    boxSizing: "border-box",
-  },
-
-  countryCode: {
-    color: "#ffffff",
-    fontWeight: "700",
-    padding: "0 12px",
-    borderRight: "1px solid rgba(255,255,255,0.20)",
-  },
-
-  input: {
-    flex: 1,
-    background: "transparent",
-    border: "none",
-    outline: "none",
-    color: "#ffffff",
-    fontSize: "18px",
-    padding: "15px 12px",
-    minWidth: 0,
-  },
-
-  securityText: {
-    color: "#8294aa",
-    fontSize: "13px",
-    marginTop: "18px",
-  },
-};
 
 export default Auth;
