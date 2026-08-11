@@ -22,6 +22,10 @@ button {
   font: inherit;
 }
 
+/* =========================================================
+   PAGE
+========================================================= */
+
 .auth-page {
   position: relative;
   width: 100%;
@@ -29,15 +33,17 @@ button {
   overflow: hidden;
   isolation: isolate;
 
+  color: #fff;
+
   background:
     radial-gradient(
-      circle at 54% 34%,
-      rgba(84, 24, 210, 0.14),
+      circle at 52% 35%,
+      rgba(83, 25, 210, 0.14),
       transparent 34%
     ),
     radial-gradient(
-      circle at 80% 38%,
-      rgba(60, 13, 180, 0.12),
+      circle at 82% 38%,
+      rgba(65, 16, 190, 0.12),
       transparent 30%
     ),
     linear-gradient(
@@ -66,7 +72,7 @@ button {
 
   background:
     radial-gradient(
-      circle at 33% 31%,
+      circle at 32% 31%,
       rgba(82, 26, 214, 0.1),
       transparent 24%
     ),
@@ -82,6 +88,7 @@ button {
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.48;
+
   animation: bgGlowMove 18s ease-in-out infinite alternate;
 }
 
@@ -90,6 +97,7 @@ button {
   height: 500px;
   left: 17%;
   top: 10%;
+
   background: rgba(73, 24, 222, 0.17);
 }
 
@@ -98,7 +106,9 @@ button {
   height: 550px;
   right: 2%;
   top: 16%;
+
   background: rgba(91, 18, 225, 0.17);
+
   animation-delay: -8s;
 }
 
@@ -119,20 +129,22 @@ button {
 .auth-bg__network {
   position: absolute;
   inset: 0;
-  opacity: 0.85;
+  opacity: 0.75;
 }
 
 .network-line {
   position: absolute;
+
   height: 1px;
+
   transform-origin: left center;
 
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(103, 41, 255, 0.13),
-    rgba(178, 47, 255, 0.42),
-    rgba(109, 37, 255, 0.16),
+    rgba(103, 41, 255, 0.12),
+    rgba(178, 47, 255, 0.38),
+    rgba(109, 37, 255, 0.13),
     transparent
   );
 
@@ -143,6 +155,7 @@ button {
   width: 32%;
   left: 5%;
   top: 18%;
+
   transform: rotate(16deg);
 }
 
@@ -150,7 +163,9 @@ button {
   width: 35%;
   left: 23%;
   top: 30%;
+
   transform: rotate(-10deg);
+
   animation-delay: -2s;
 }
 
@@ -158,7 +173,9 @@ button {
   width: 38%;
   left: 41%;
   top: 21%;
+
   transform: rotate(11deg);
+
   animation-delay: -5s;
 }
 
@@ -166,7 +183,9 @@ button {
   width: 30%;
   left: 64%;
   top: 39%;
+
   transform: rotate(-14deg);
+
   animation-delay: -7s;
 }
 
@@ -174,7 +193,9 @@ button {
   width: 31%;
   left: 8%;
   top: 57%;
+
   transform: rotate(-6deg);
+
   animation-delay: -3s;
 }
 
@@ -182,7 +203,9 @@ button {
   width: 40%;
   left: 29%;
   top: 62%;
+
   transform: rotate(8deg);
+
   animation-delay: -6s;
 }
 
@@ -190,7 +213,9 @@ button {
   width: 29%;
   left: 58%;
   top: 67%;
+
   transform: rotate(-10deg);
+
   animation-delay: -9s;
 }
 
@@ -198,27 +223,29 @@ button {
   width: 27%;
   right: -2%;
   top: 24%;
+
   transform: rotate(22deg);
+
   animation-delay: -4s;
 }
 
 @keyframes networkLinePulse {
   0% {
-    opacity: 0.18;
-    filter: brightness(0.75);
+    opacity: 0.16;
   }
 
   100% {
-    opacity: 0.78;
-    filter: brightness(1.4);
+    opacity: 0.72;
   }
 }
 
 .network-dot {
   position: absolute;
+
   display: block;
 
   border-radius: 50%;
+
   background: #9f38ff;
 
   box-shadow:
@@ -244,67 +271,46 @@ button {
 
 /* =========================================================
    WORLD MAP
+   YANGI TRANSPARENT PNG ISHLATILADI
 ========================================================= */
 
 .auth-world-map {
   position: absolute;
   z-index: 0;
 
-  left: 22.5%;
-  top: 17.8%;
+  /*
+    Reference:
+    xarita hero textning ORQASIDA EMAS.
+    Textning o'ng tomonidan boshlanadi.
+  */
 
-  width: 49%;
-  height: 49%;
+  left: 23.5%;
+  top: 17%;
 
-  background-image: url("/auth-world-map.png");
+  width: 48%;
+  height: 48%;
+
+  background-image: url("/auth-world-map-transparent2.png");
+
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-size: contain;
 
-  opacity: 0.96;
+  opacity: 0.94;
+
+  /*
+    Transparent PNG bo'lgani uchun eski
+    aggressive crop/mask olib tashlandi.
+  */
 
   mix-blend-mode: screen;
 
   filter:
-    saturate(1.25)
-    contrast(1.07)
-    brightness(0.92);
+    saturate(1.12)
+    contrast(1.03)
+    brightness(0.95);
 
-  -webkit-mask-image:
-    radial-gradient(
-      ellipse 78% 82% at 53% 50%,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 55%,
-      rgba(0, 0, 0, 0.88) 68%,
-      rgba(0, 0, 0, 0.4) 82%,
-      transparent 100%
-    );
-
-  mask-image:
-    radial-gradient(
-      ellipse 78% 82% at 53% 50%,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 55%,
-      rgba(0, 0, 0, 0.88) 68%,
-      rgba(0, 0, 0, 0.4) 82%,
-      transparent 100%
-    );
-
-  animation: worldMapFloat 14s ease-in-out infinite alternate;
-}
-
-.auth-world-map::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background:
-    radial-gradient(
-      circle at center,
-      transparent 38%,
-      rgba(5, 4, 28, 0.22) 73%,
-      rgba(3, 3, 20, 0.85) 100%
-    );
+  animation: worldMapFloat 15s ease-in-out infinite alternate;
 }
 
 @keyframes worldMapFloat {
@@ -313,50 +319,58 @@ button {
   }
 
   to {
-    transform: translate3d(5px, -3px, 0) scale(1.008);
+    transform: translate3d(5px, -3px, 0) scale(1.006);
   }
 }
 
 /* =========================================================
-   WAVES
+   BOTTOM WAVES
 ========================================================= */
 
 .auth-wave {
   position: absolute;
+
   border-radius: 50%;
 
   border-top: 1px solid rgba(122, 48, 255, 0.5);
-  border-bottom: 1px solid rgba(87, 28, 190, 0.12);
 
   filter: drop-shadow(
-    0 0 9px rgba(98, 28, 224, 0.45)
+    0 0 9px rgba(98, 28, 224, 0.4)
   );
 }
 
 .auth-wave--1 {
   width: 72%;
   height: 195px;
+
   left: -12%;
   bottom: 1%;
+
   transform: rotate(-4deg);
 }
 
 .auth-wave--2 {
   width: 72%;
   height: 220px;
+
   left: 18%;
   bottom: -7%;
+
   transform: rotate(-3deg);
-  opacity: 0.8;
+
+  opacity: 0.75;
 }
 
 .auth-wave--3 {
   width: 47%;
   height: 175px;
+
   right: -10%;
   bottom: 1%;
+
   transform: rotate(3deg);
-  opacity: 0.45;
+
+  opacity: 0.4;
 }
 
 .auth-bg__vignette {
@@ -366,15 +380,15 @@ button {
   background:
     linear-gradient(
       90deg,
-      rgba(2, 3, 16, 0.2),
-      transparent 34%,
-      transparent 71%,
+      rgba(2, 3, 16, 0.18),
+      transparent 33%,
+      transparent 72%,
       rgba(2, 3, 16, 0.18)
     ),
     radial-gradient(
       ellipse at center,
-      transparent 52%,
-      rgba(2, 3, 17, 0.44) 100%
+      transparent 58%,
+      rgba(2, 3, 17, 0.36) 100%
     );
 }
 
@@ -389,22 +403,28 @@ button {
   width: 100%;
   height: 120px;
 
-  padding: 32px 3.1% 0;
+  padding:
+    32px
+    3.1%
+    0;
 
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
   gap: 24px;
 }
 
 .ecwt-brand {
   border: 0;
   padding: 0;
+
   background: transparent;
   color: #fff;
 
   display: inline-flex;
   align-items: center;
+
   gap: 13px;
 
   cursor: pointer;
@@ -417,6 +437,7 @@ button {
   height: 60px;
 
   padding: 1px;
+
   border-radius: 12px;
 
   display: grid;
@@ -436,10 +457,13 @@ button {
 
 .ecwt-brand__logo::after {
   content: "";
+
   position: absolute;
+
   inset: -7px;
 
   border-radius: 15px;
+
   border: 1px solid rgba(117, 47, 255, 0.23);
 }
 
@@ -460,18 +484,21 @@ button {
 
   font-size: 29px;
   font-weight: 800;
+
   letter-spacing: -2px;
 }
 
 .ecwt-brand__name {
   font-size: 32px;
   font-weight: 800;
+
   letter-spacing: -1.4px;
 }
 
 .ecwt-brand__divider {
   width: 1px;
   height: 43px;
+
   margin-left: 3px;
 
   background: rgba(255, 255, 255, 0.25);
@@ -479,8 +506,11 @@ button {
 
 .ecwt-brand__description {
   font-size: 14px;
+
   line-height: 1.47;
+
   font-weight: 500;
+
   text-align: left;
 
   color: rgba(255, 255, 255, 0.9);
@@ -489,6 +519,7 @@ button {
 .auth-header__right {
   display: flex;
   align-items: center;
+
   gap: 18px;
 
   padding-top: 7px;
@@ -496,19 +527,24 @@ button {
 
 .business-badge {
   height: 43px;
+
   padding: 0 20px;
 
   border-radius: 999px;
+
   border: 1px solid rgba(109, 50, 224, 0.36);
 
   display: flex;
   align-items: center;
+
   gap: 10px;
 
   background: rgba(10, 8, 42, 0.6);
+
   backdrop-filter: blur(14px);
 
   font-size: 13px;
+
   color: rgba(255, 255, 255, 0.87);
 }
 
@@ -535,9 +571,11 @@ button {
   display: flex;
 
   border-radius: 999px;
+
   border: 1px solid rgba(103, 46, 220, 0.38);
 
   background: rgba(7, 7, 30, 0.6);
+
   backdrop-filter: blur(14px);
 }
 
@@ -548,6 +586,7 @@ button {
   padding: 0 14px;
 
   border: 0;
+
   border-radius: 999px;
 
   background: transparent;
@@ -617,6 +656,7 @@ button {
 
 .auth-hero {
   min-width: 0;
+
   align-self: center;
 }
 
@@ -630,10 +670,15 @@ button {
 }
 
 .auth-eyebrow {
-  margin: 0 0 28px;
+  margin:
+    0
+    0
+    28px;
 
   font-size: 14px;
+
   font-weight: 700;
+
   line-height: 1;
 
   letter-spacing: 0.27em;
@@ -681,21 +726,27 @@ button {
 .auth-description {
   max-width: 405px;
 
-  margin: 29px 0 0;
+  margin:
+    29px
+    0
+    0;
 
   font-size: 15px;
+
   line-height: 1.8;
 
   color: rgba(255, 255, 255, 0.7);
 }
 
 /* =========================================================
-   PANEL
+   RIGHT PANEL
 ========================================================= */
 
 .auth-panel {
   width: 100%;
+
   align-self: center;
+
   justify-self: end;
 
   transform: translateY(-1px);
@@ -756,12 +807,7 @@ button {
 
   border-radius: 50%;
 
-  background: rgba(
-    115,
-    31,
-    255,
-    0.13
-  );
+  background: rgba(115, 31, 255, 0.13);
 
   filter: blur(58px);
 }
@@ -781,6 +827,7 @@ button {
 .live {
   display: flex;
   align-items: center;
+
   gap: 7px;
 
   font-size: 13px;
@@ -808,7 +855,7 @@ button {
 }
 
 /* =========================================================
-   ORB
+   ECWT ORB
 ========================================================= */
 
 .auth-card__orb {
@@ -818,7 +865,10 @@ button {
   display: grid;
   place-items: center;
 
-  margin: 31px 0 20px;
+  margin:
+    31px
+    0
+    20px;
 }
 
 .ecwt-orb {
@@ -834,7 +884,8 @@ button {
 .ecwt-orb__halo {
   position: absolute;
 
-  inset: 12px;
+  width: 126px;
+  height: 126px;
 
   border-radius: 50%;
 
@@ -842,17 +893,26 @@ button {
     139,
     50,
     255,
-    0.68
+    0.72
   );
 
   box-shadow:
     0 0 12px rgba(126, 34, 255, 0.95),
+    0 0 28px rgba(103, 25, 255, 0.42),
     inset 0 0 24px rgba(93, 24, 222, 0.28);
 }
 
 .ecwt-orb__segments {
   position: absolute;
-  inset: 0;
+
+  left: 50%;
+  top: 50%;
+
+  width: 138px;
+  height: 138px;
+
+  transform:
+    translate(-50%, -50%);
 
   animation: orbRotate 10s linear infinite;
 }
@@ -863,41 +923,44 @@ button {
   left: 50%;
   top: 50%;
 
-  width: 7px;
-  height: 18px;
+  width: 6px;
+  height: 16px;
 
-  margin-left: -3.5px;
-  margin-top: -9px;
+  margin-left: -3px;
+  margin-top: -8px;
 
   border-radius: 999px;
 
   transform-origin:
-    center
-    76px;
+    3px
+    8px;
 
   background: linear-gradient(
     180deg,
-    #ffffff 0%,
-    #e0bcff 20%,
-    #a438ff 63%,
-    #6a22ff 100%
+    #ffffff,
+    #dca8ff 28%,
+    #a438ff 67%,
+    #6821ff
   );
 
   box-shadow:
-    0 0 7px rgba(255, 255, 255, 0.9),
-    0 0 15px rgba(144, 36, 255, 0.95);
+    0 0 6px rgba(255, 255, 255, 0.9),
+    0 0 13px rgba(144, 36, 255, 0.95);
 }
 
 @keyframes orbRotate {
   to {
-    transform: rotate(360deg);
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
   }
 }
 
 .ecwt-orb__ring {
   position: absolute;
 
-  inset: 26px;
+  width: 108px;
+  height: 108px;
 
   border-radius: 50%;
 
@@ -942,6 +1005,7 @@ button {
 .ecwt-orb__core span {
   font-size: 17px;
   font-weight: 700;
+
   line-height: 1;
 }
 
@@ -949,13 +1013,14 @@ button {
   margin-top: 4px;
 
   font-size: 39px;
+
   line-height: 1;
 
   letter-spacing: -2px;
 }
 
 /* =========================================================
-   CARD COPY
+   CARD TEXT
 ========================================================= */
 
 .auth-card__copy {
@@ -970,6 +1035,7 @@ button {
     11px;
 
   font-size: 24px;
+
   line-height: 1.2;
 
   letter-spacing: -0.035em;
@@ -979,13 +1045,14 @@ button {
   margin: 0;
 
   font-size: 14px;
+
   line-height: 1.72;
 
   color: rgba(255, 255, 255, 0.68);
 }
 
 /* =========================================================
-   ACTIONS
+   BUTTONS
 ========================================================= */
 
 .auth-card__actions {
@@ -993,14 +1060,11 @@ button {
   z-index: 3;
 
   display: grid;
+
   gap: 13px;
 
   margin-top: 24px;
 }
-
-/* =========================================================
-   REGISTER LED
-========================================================= */
 
 .register-led {
   position: relative;
@@ -1048,6 +1112,7 @@ button {
   content: "";
 
   position: absolute;
+
   inset: 2px;
 
   z-index: 0;
@@ -1056,9 +1121,9 @@ button {
 
   background: linear-gradient(
     90deg,
-    #3c24e7 0%,
+    #3c24e7,
     #7024ef 48%,
-    #b51de1 100%
+    #b51de1
   );
 }
 
@@ -1120,6 +1185,7 @@ button {
   padding: 0 24px;
 
   border: 0;
+
   border-radius: 15px;
 
   background: transparent;
@@ -1129,6 +1195,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 13px;
 
   font-size: 17px;
@@ -1143,6 +1210,7 @@ button {
 
 .register-button:hover {
   transform: translateY(-1px);
+
   filter: brightness(1.14);
 }
 
@@ -1182,11 +1250,9 @@ button {
 }
 
 .login-button:hover {
-  border-color:
-    rgba(135, 74, 255, 0.88);
+  border-color: rgba(135, 74, 255, 0.88);
 
-  background:
-    rgba(23, 16, 62, 0.7);
+  background: rgba(23, 16, 62, 0.7);
 }
 
 /* =========================================================
@@ -1202,6 +1268,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-around;
+
   gap: 8px;
 }
 
@@ -1222,12 +1289,6 @@ button {
   font-size: 13px;
 
   cursor: pointer;
-
-  transition: color 0.2s ease;
-}
-
-.auth-language--card button:hover {
-  color: #fff;
 }
 
 .auth-language--card button::after {
@@ -1321,11 +1382,13 @@ button {
 .auth-stat > div:last-child {
   display: flex;
   flex-direction: column;
+
   gap: 5px;
 }
 
 .auth-stat strong {
   font-size: 27px;
+
   line-height: 1;
 }
 
@@ -1333,6 +1396,7 @@ button {
   max-width: 105px;
 
   font-size: 12px;
+
   line-height: 1.45;
 
   color: rgba(255, 255, 255, 0.63);
@@ -1342,8 +1406,7 @@ button {
   width: 1px;
   height: 63px;
 
-  background:
-    rgba(146, 90, 245, 0.32);
+  background: rgba(146, 90, 245, 0.32);
 }
 
 /* =========================================================
@@ -1402,8 +1465,7 @@ button {
 .marketplace-box:hover {
   transform: translateY(-3px);
 
-  border-color:
-    rgba(148, 73, 255, 0.95);
+  border-color: rgba(148, 73, 255, 0.95);
 
   box-shadow:
     0 0 16px rgba(108, 36, 255, 0.26),
@@ -1445,11 +1507,13 @@ button {
 
 .marketplace-box--walmart span {
   font-size: 38px;
+
   color: #ffc329;
 }
 
 .marketplace-box--shopify span {
   font-size: 37px;
+
   color: #82c94c;
 }
 
@@ -1503,14 +1567,15 @@ button {
 }
 
 /* =========================================================
-   1440 AND BELOW
+   1440
 ========================================================= */
 
 @media (max-width: 1440px) {
   .auth-world-map {
     left: 24%;
-    top: 19%;
-    width: 47%;
+    top: 18%;
+
+    width: 48%;
     height: 46%;
   }
 
@@ -1545,11 +1610,13 @@ button {
   }
 
   .auth-world-map {
-    left: 24%;
+    left: 25%;
     top: 20%;
-    width: 51%;
-    height: 45%;
-    opacity: 0.76;
+
+    width: 48%;
+    height: 43%;
+
+    opacity: 0.75;
   }
 
   .auth-stats {
@@ -1605,23 +1672,26 @@ button {
 
   .auth-hero__content {
     max-width: 620px;
+
     transform: none;
   }
 
   .auth-panel {
     max-width: 520px;
+
     justify-self: stretch;
+
     transform: none;
   }
 
   .auth-world-map {
-    left: 13%;
+    left: 14%;
     top: 17%;
 
-    width: 82%;
-    height: 45%;
+    width: 80%;
+    height: 44%;
 
-    opacity: 0.23;
+    opacity: 0.22;
   }
 
   .auth-footer {
@@ -1631,6 +1701,7 @@ button {
       30px;
 
     flex-direction: column;
+
     align-items: stretch;
   }
 
@@ -1681,7 +1752,9 @@ button {
   .auth-language--top button {
     min-width: 46px;
     height: 34px;
+
     padding: 0 8px;
+
     font-size: 12px;
   }
 
@@ -1703,12 +1776,11 @@ button {
   }
 
   .auth-title {
-    font-size:
-      clamp(
-        40px,
-        12vw,
-        58px
-      );
+    font-size: clamp(
+      40px,
+      12vw,
+      58px
+    );
   }
 
   .auth-description {
@@ -1768,6 +1840,7 @@ button {
 
   .auth-stat span {
     max-width: 80px;
+
     font-size: 9px;
   }
 
@@ -1783,13 +1856,13 @@ button {
   }
 
   .auth-world-map {
-    left: 4%;
+    left: 5%;
     top: 18%;
 
-    width: 108%;
-    height: 35%;
+    width: 105%;
+    height: 34%;
 
-    opacity: 0.16;
+    opacity: 0.15;
   }
 }
 
@@ -1819,6 +1892,7 @@ button {
 
   .auth-stat {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
