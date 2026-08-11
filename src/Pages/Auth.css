@@ -2105,17 +2105,3 @@ button {
     min-height: 580px;
   }
 }
-.auth-world-map {
-  left: 9% !important;
-  top: 10% !important;
-  width: 70% !important;
-  height: 70% !important;
-
-  background-image: url("/auth-world-map-final.png") !important;
-  background-size: contain !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-
-  opacity: 1 !important;
-  mix-blend-mode: screen !important;
-}
