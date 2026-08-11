@@ -1816,3 +1816,7 @@ button {
     text-align: center;
   }
 }
+/* ECWT — Vercel rebuild trigger
+   Auth.css is connected to src/Pages/Auth.jsx
+   2026-08-12
+*/
