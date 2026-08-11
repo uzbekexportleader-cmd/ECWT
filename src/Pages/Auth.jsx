@@ -3,21 +3,17 @@ import "./Auth.css";
 
 const translations = {
   uz: {
-    business: "O‘zbek biznesi uchun yaratilgan",
+    badge: "O‘zbek biznesi uchun yaratilgan",
     eyebrow: "GLOBAL COMMERCE INFRASTRUCTURE",
+
     title1: "O‘zbekiston",
     title2: "mahsulotlarini",
     title3: "dunyoga olib",
     title4: "chiqamiz.",
+
     description:
       "ECWT AI mahsulotingizni tahlil qiladi, xalqaro savdoga tayyorlaydi va mos marketplace’larni tavsiya qiladi.",
 
-    marketplaceStat: "Global marketplace",
-    businessStat: "Biznes imkoniyati",
-    aiStat: "Smart yordamchi",
-
-    id: "ECWT ID",
-    live: "LIVE",
     cardTitle: "Global savdoni boshlang",
     cardText:
       "Mahsulotingizni yuklang. ECWT AI sizga keyingi qadamlarni bosqichma-bosqich ko‘rsatadi.",
@@ -25,55 +21,55 @@ const translations = {
     register: "Ro‘yxatdan o‘tish",
     login: "Akkauntim bor",
 
-    languageUz: "O‘zbekcha",
-    languageRu: "Русский",
-    languageEn: "English",
+    statMarket: "Global marketplace",
+    statBusiness: "Biznes imkoniyati",
+    statAI: "Smart yordamchi",
+
+    uzbek: "O‘zbekcha",
+    russian: "Русский",
+    english: "English",
   },
 
   ru: {
-    business: "Создано для бизнеса Узбекистана",
+    badge: "Создано для бизнеса Узбекистана",
     eyebrow: "GLOBAL COMMERCE INFRASTRUCTURE",
-    title1: "Выводим",
-    title2: "продукцию",
-    title3: "Узбекистана",
+
+    title1: "Продукцию",
+    title2: "Узбекистана",
+    title3: "выводим",
     title4: "на мировой рынок.",
+
     description:
-      "ECWT AI анализирует ваш товар, подготавливает его к международным продажам и рекомендует подходящие маркетплейсы.",
+      "ECWT AI анализирует ваш товар, подготавливает его к международной торговле и рекомендует подходящие маркетплейсы.",
 
-    marketplaceStat: "Глобальных маркетплейсов",
-    businessStat: "Возможностей для бизнеса",
-    aiStat: "Умный помощник",
-
-    id: "ECWT ID",
-    live: "LIVE",
     cardTitle: "Начните глобальные продажи",
     cardText:
-      "Загрузите свой товар. ECWT AI пошагово покажет вам дальнейшие действия.",
+      "Загрузите свой товар. ECWT AI пошагово покажет вам следующие действия.",
 
     register: "Регистрация",
     login: "У меня есть аккаунт",
 
-    languageUz: "O‘zbekcha",
-    languageRu: "Русский",
-    languageEn: "English",
+    statMarket: "Глобальных маркетплейсов",
+    statBusiness: "Возможностей для бизнеса",
+    statAI: "Умный помощник",
+
+    uzbek: "O‘zbekcha",
+    russian: "Русский",
+    english: "English",
   },
 
   en: {
-    business: "Built for Uzbek businesses",
+    badge: "Built for Uzbek businesses",
     eyebrow: "GLOBAL COMMERCE INFRASTRUCTURE",
+
     title1: "Taking",
     title2: "Uzbek products",
     title3: "to the",
     title4: "global market.",
+
     description:
       "ECWT AI analyzes your product, prepares it for international commerce and recommends the right marketplaces.",
 
-    marketplaceStat: "Global marketplaces",
-    businessStat: "Business opportunities",
-    aiStat: "Smart assistant",
-
-    id: "ECWT ID",
-    live: "LIVE",
     cardTitle: "Start selling globally",
     cardText:
       "Upload your product. ECWT AI will guide you through the next steps one by one.",
@@ -81,87 +77,120 @@ const translations = {
     register: "Create account",
     login: "I have an account",
 
-    languageUz: "O‘zbekcha",
-    languageRu: "Русский",
-    languageEn: "English",
+    statMarket: "Global marketplaces",
+    statBusiness: "Business opportunities",
+    statAI: "Smart assistant",
+
+    uzbek: "O‘zbekcha",
+    russian: "Русский",
+    english: "English",
   },
 };
 
-const marketplaces = [
-  {
-    id: "amazon",
-    label: "a",
-    aria: "Amazon",
-  },
-  {
-    id: "ebay",
-    label: "ebay",
-    aria: "eBay",
-  },
-  {
-    id: "walmart",
-    label: "✦",
-    aria: "Walmart",
-  },
-  {
-    id: "shopify",
-    label: "S",
-    aria: "Shopify",
-  },
-  {
-    id: "google",
-    label: "G",
-    aria: "Google Marketplace",
-  },
-  {
-    id: "mercari",
-    label: "M",
-    aria: "Mercari",
-  },
-  {
-    id: "bonanza",
-    label: "b",
-    aria: "Bonanza",
-  },
-  {
-    id: "poshmark",
-    label: "P",
-    aria: "Poshmark",
-  },
+const marketplaceItems = [
+  { key: "amazon", text: "a", name: "Amazon" },
+  { key: "ebay", text: "ebay", name: "eBay" },
+  { key: "walmart", text: "✦", name: "Walmart" },
+  { key: "shopify", text: "S", name: "Shopify" },
+  { key: "google", text: "G", name: "Google Marketplace" },
+  { key: "mercari", text: "M", name: "Mercari" },
+  { key: "bonanza", text: "b", name: "Bonanza" },
+  { key: "poshmark", text: "P", name: "Poshmark" },
 ];
 
 const networkNodes = [
-  { left: "6%", top: "17%", delay: "0s", size: 3 },
-  { left: "14%", top: "32%", delay: "1.1s", size: 4 },
-  { left: "21%", top: "14%", delay: "2.6s", size: 3 },
-  { left: "29%", top: "43%", delay: "0.7s", size: 5 },
-  { left: "37%", top: "22%", delay: "3.3s", size: 3 },
-  { left: "44%", top: "37%", delay: "1.8s", size: 4 },
-  { left: "51%", top: "15%", delay: "2.1s", size: 3 },
-  { left: "58%", top: "30%", delay: "0.4s", size: 5 },
-  { left: "66%", top: "19%", delay: "2.9s", size: 4 },
-  { left: "73%", top: "40%", delay: "1.2s", size: 3 },
-  { left: "81%", top: "23%", delay: "3.6s", size: 4 },
-  { left: "91%", top: "36%", delay: "0.9s", size: 3 },
-  { left: "10%", top: "68%", delay: "3s", size: 4 },
-  { left: "24%", top: "74%", delay: "0.2s", size: 3 },
-  { left: "42%", top: "65%", delay: "1.4s", size: 4 },
-  { left: "55%", top: "78%", delay: "2.3s", size: 5 },
-  { left: "69%", top: "69%", delay: "0.5s", size: 3 },
-  { left: "84%", top: "76%", delay: "2.7s", size: 4 },
-  { left: "95%", top: "62%", delay: "1.7s", size: 3 },
+  { x: "5%", y: "18%", size: 3, delay: "0s" },
+  { x: "13%", y: "29%", size: 4, delay: "-1s" },
+  { x: "21%", y: "15%", size: 3, delay: "-2.4s" },
+  { x: "28%", y: "37%", size: 4, delay: "-0.6s" },
+  { x: "35%", y: "24%", size: 3, delay: "-3.1s" },
+  { x: "42%", y: "43%", size: 5, delay: "-1.8s" },
+  { x: "49%", y: "18%", size: 3, delay: "-4s" },
+  { x: "55%", y: "31%", size: 4, delay: "-2.2s" },
+  { x: "62%", y: "21%", size: 3, delay: "-0.8s" },
+  { x: "68%", y: "39%", size: 5, delay: "-3.7s" },
+  { x: "75%", y: "17%", size: 3, delay: "-2.9s" },
+  { x: "82%", y: "32%", size: 4, delay: "-1.2s" },
+  { x: "91%", y: "22%", size: 3, delay: "-4.4s" },
+
+  { x: "8%", y: "67%", size: 3, delay: "-2s" },
+  { x: "18%", y: "76%", size: 4, delay: "-3.4s" },
+  { x: "31%", y: "62%", size: 3, delay: "-0.9s" },
+  { x: "45%", y: "71%", size: 5, delay: "-2.6s" },
+  { x: "59%", y: "64%", size: 3, delay: "-1.4s" },
+  { x: "72%", y: "74%", size: 4, delay: "-3.9s" },
+  { x: "87%", y: "68%", size: 3, delay: "-2.1s" },
+  { x: "96%", y: "57%", size: 4, delay: "-1.1s" },
 ];
+
+function LanguageSwitcher({ language, setLanguage, compact = false }) {
+  return (
+    <div
+      className={
+        compact
+          ? "auth-language auth-language--card"
+          : "auth-language auth-language--top"
+      }
+    >
+      <button
+        type="button"
+        className={language === "uz" ? "is-active" : ""}
+        onClick={() => setLanguage("uz")}
+      >
+        {compact ? "O‘zbekcha" : "UZ"}
+      </button>
+
+      <button
+        type="button"
+        className={language === "ru" ? "is-active" : ""}
+        onClick={() => setLanguage("ru")}
+      >
+        {compact ? "Русский" : "RU"}
+      </button>
+
+      <button
+        type="button"
+        className={language === "en" ? "is-active" : ""}
+        onClick={() => setLanguage("en")}
+      >
+        {compact ? "English" : "EN"}
+      </button>
+    </div>
+  );
+}
+
+function EcwtOrb() {
+  return (
+    <div className="ecwt-orb">
+      <div className="ecwt-orb__halo" />
+
+      <div className="ecwt-orb__segments">
+        {Array.from({ length: 16 }).map((_, index) => (
+          <span
+            key={index}
+            style={{
+              transform: `rotate(${index * 22.5}deg) translateY(-67px)`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="ecwt-orb__ring" />
+
+      <div className="ecwt-orb__core">
+        <span>ECWT</span>
+        <strong>UZ</strong>
+      </div>
+    </div>
+  );
+}
 
 function Auth() {
   const [language, setLanguage] = useState(() => {
-    const savedLanguage = localStorage.getItem("ecwt-language");
+    const saved = localStorage.getItem("ecwt-language");
 
-    if (
-      savedLanguage === "uz" ||
-      savedLanguage === "ru" ||
-      savedLanguage === "en"
-    ) {
-      return savedLanguage;
+    if (saved === "uz" || saved === "ru" || saved === "en") {
+      return saved;
     }
 
     return "uz";
@@ -174,49 +203,39 @@ function Auth() {
 
   const t = useMemo(() => translations[language], [language]);
 
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-  };
-
-  const goToRegister = () => {
+  const handleRegister = () => {
     window.location.assign("/register");
   };
 
-  const goToLogin = () => {
+  const handleLogin = () => {
     window.location.assign("/login");
   };
 
   return (
-    <main className="ecwt-auth">
-      {/* =========================
-          BACKGROUND
-      ========================== */}
-      <div className="auth-background" aria-hidden="true">
-        <div className="auth-background__glow auth-background__glow--one" />
-        <div className="auth-background__glow auth-background__glow--two" />
-        <div className="auth-background__glow auth-background__glow--three" />
+    <main className="auth-page">
+      {/* BACKGROUND */}
+      <div className="auth-bg" aria-hidden="true">
+        <div className="auth-bg__base" />
+        <div className="auth-bg__glow auth-bg__glow--1" />
+        <div className="auth-bg__glow auth-bg__glow--2" />
 
-        <div className="network-grid" />
+        <div className="auth-bg__network">
+          <span className="network-line line-1" />
+          <span className="network-line line-2" />
+          <span className="network-line line-3" />
+          <span className="network-line line-4" />
+          <span className="network-line line-5" />
+          <span className="network-line line-6" />
+          <span className="network-line line-7" />
+          <span className="network-line line-8" />
 
-        <div className="network-lines">
-          <span className="network-line network-line--1" />
-          <span className="network-line network-line--2" />
-          <span className="network-line network-line--3" />
-          <span className="network-line network-line--4" />
-          <span className="network-line network-line--5" />
-          <span className="network-line network-line--6" />
-          <span className="network-line network-line--7" />
-          <span className="network-line network-line--8" />
-        </div>
-
-        <div className="network-nodes">
           {networkNodes.map((node, index) => (
-            <span
+            <i
               key={index}
-              className="network-node"
+              className="network-dot"
               style={{
-                left: node.left,
-                top: node.top,
+                left: node.x,
+                top: node.y,
                 width: `${node.size}px`,
                 height: `${node.size}px`,
                 animationDelay: node.delay,
@@ -225,134 +244,105 @@ function Auth() {
           ))}
         </div>
 
-        <div className="world-map" />
+        {/*
+          MUHIM:
+          public/auth-world-map.png ishlatiladi.
+          CSS uni to‘rtburchak ko‘rinmasligi uchun crop + mask + blend qiladi.
+        */}
+        <div className="auth-world-map" />
 
-        <div className="energy-wave energy-wave--one" />
-        <div className="energy-wave energy-wave--two" />
-        <div className="energy-wave energy-wave--three" />
+        <div className="auth-wave auth-wave--1" />
+        <div className="auth-wave auth-wave--2" />
+        <div className="auth-wave auth-wave--3" />
 
-        <div className="background-vignette" />
+        <div className="auth-bg__vignette" />
       </div>
 
-      {/* =========================
-          HEADER
-      ========================== */}
+      {/* HEADER */}
       <header className="auth-header">
         <button
-          className="brand"
           type="button"
+          className="ecwt-brand"
           onClick={() => window.location.assign("/")}
-          aria-label="ECWT"
+          aria-label="ECWT Home"
         >
-          <span className="brand-logo">
-            <span className="brand-logo__inner">EC</span>
+          <span className="ecwt-brand__logo">
+            <span>EC</span>
           </span>
 
-          <span className="brand-name">ECWT</span>
+          <strong className="ecwt-brand__name">ECWT</strong>
 
-          <span className="brand-divider" />
+          <i className="ecwt-brand__divider" />
 
-          <span className="brand-description">
+          <span className="ecwt-brand__description">
             O‘ZBEKISTON ELEKTRON
             <br />
             TIJORAT KOMPANIYASI
           </span>
         </button>
 
-        <div className="header-actions">
-          <div className="built-for-badge">
-            <span className="built-for-badge__dot" />
-            <span>{t.business}</span>
+        <div className="auth-header__right">
+          <div className="business-badge">
+            <i />
+            <span>{t.badge}</span>
           </div>
 
-          <div className="top-language-switcher">
-            {["uz", "ru", "en"].map((lang) => (
-              <button
-                key={lang}
-                type="button"
-                className={`top-language-button ${
-                  language === lang ? "is-active" : ""
-                }`}
-                onClick={() => changeLanguage(lang)}
-                aria-pressed={language === lang}
-              >
-                {lang.toUpperCase()}
-              </button>
-            ))}
-          </div>
+          <LanguageSwitcher
+            language={language}
+            setLanguage={setLanguage}
+          />
         </div>
       </header>
 
-      {/* =========================
-          MAIN CONTENT
-      ========================== */}
-      <section className="auth-content">
-        {/* LEFT */}
-        <div className="auth-hero">
-          <div className="hero-copy">
-            <p className="hero-eyebrow">{t.eyebrow}</p>
+      {/* MAIN */}
+      <section className="auth-main">
+        {/* LEFT HERO */}
+        <section className="auth-hero">
+          <div className="auth-hero__content">
+            <p className="auth-eyebrow">{t.eyebrow}</p>
 
-            <h1 className="hero-title">
+            <h1 className="auth-title">
               <span>{t.title1}</span>
               <span>{t.title2}</span>
-              <span className="hero-title__gradient">{t.title3}</span>
-              <span className="hero-title__gradient">{t.title4}</span>
+              <span className="auth-title__purple">{t.title3}</span>
+              <span className="auth-title__purple">{t.title4}</span>
             </h1>
 
-            <p className="hero-description">{t.description}</p>
+            <p className="auth-description">{t.description}</p>
           </div>
-        </div>
+        </section>
 
-        {/* RIGHT */}
-        <aside className="auth-card-wrapper">
+        {/* RIGHT CARD */}
+        <aside className="auth-panel">
           <div className="auth-card">
-            <div className="auth-card__shine" />
+            <div className="auth-card__glow" />
 
-            <div className="auth-card-header">
-              <span>{t.id}</span>
+            <div className="auth-card__header">
+              <strong>ECWT ID</strong>
 
-              <span className="live-status">
-                <span className="live-status__dot" />
-                {t.live}
+              <span className="live">
+                <i />
+                LIVE
               </span>
             </div>
 
-            <div className="identity-orb-wrap">
-              <div className="identity-orb">
-                <div className="identity-orb__ring identity-orb__ring--outer" />
-
-                <div className="identity-orb__segments">
-                  {Array.from({ length: 12 }).map((_, index) => (
-                    <span
-                      key={index}
-                      className={`identity-segment identity-segment--${index + 1}`}
-                    />
-                  ))}
-                </div>
-
-                <div className="identity-orb__glow" />
-
-                <div className="identity-orb__center">
-                  <span className="identity-orb__small">ECWT</span>
-                  <strong>UZ</strong>
-                </div>
-              </div>
+            <div className="auth-card__orb">
+              <EcwtOrb />
             </div>
 
-            <div className="auth-card-copy">
+            <div className="auth-card__copy">
               <h2>{t.cardTitle}</h2>
               <p>{t.cardText}</p>
             </div>
 
-            <div className="auth-buttons">
-              <div className="register-led-shell">
-                <span className="register-led register-led--1" />
-                <span className="register-led register-led--2" />
+            <div className="auth-card__actions">
+              <div className="register-led">
+                <div className="register-led__beam" />
 
                 <button
                   type="button"
                   className="register-button"
-                  onClick={goToRegister}
+                  onClick={handleRegister}
                 >
                   <span>{t.register}</span>
 
@@ -377,79 +367,58 @@ function Auth() {
               <button
                 type="button"
                 className="login-button"
-                onClick={goToLogin}
+                onClick={handleLogin}
               >
                 {t.login}
               </button>
             </div>
 
-            <div className="card-language-switcher">
-              <button
-                type="button"
-                className={language === "uz" ? "is-active" : ""}
-                onClick={() => changeLanguage("uz")}
-              >
-                {t.languageUz}
-              </button>
-
-              <button
-                type="button"
-                className={language === "ru" ? "is-active" : ""}
-                onClick={() => changeLanguage("ru")}
-              >
-                {t.languageRu}
-              </button>
-
-              <button
-                type="button"
-                className={language === "en" ? "is-active" : ""}
-                onClick={() => changeLanguage("en")}
-              >
-                {t.languageEn}
-              </button>
-            </div>
+            <LanguageSwitcher
+              compact
+              language={language}
+              setLanguage={setLanguage}
+            />
           </div>
         </aside>
       </section>
 
-      {/* =========================
-          BOTTOM
-      ========================== */}
+      {/* FOOTER */}
       <footer className="auth-footer">
         <div className="auth-stats">
-          <div className="stat-item">
-            <span className="stat-icon stat-icon--globe">
-              <svg viewBox="0 0 40 40" aria-hidden="true">
+          <div className="auth-stat">
+            <div className="auth-stat__icon">
+              <svg viewBox="0 0 42 42" aria-hidden="true">
                 <circle
-                  cx="20"
-                  cy="20"
+                  cx="21"
+                  cy="21"
                   r="15"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.7"
                 />
+
                 <path
-                  d="M5 20h30M20 5c5 5 7 10 7 15s-2 10-7 15M20 5c-5 5-7 10-7 15s2 10 7 15"
+                  d="M6 21h30M21 6c5 5 7 10 7 15s-2 10-7 15M21 6c-5 5-7 10-7 15s2 10 7 15"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
                 />
               </svg>
-            </span>
+            </div>
 
-            <span className="stat-copy">
+            <div>
               <strong>9+</strong>
-              <small>{t.marketplaceStat}</small>
-            </span>
+              <span>{t.statMarket}</span>
+            </div>
           </div>
 
-          <span className="stat-divider" />
+          <i className="auth-stats__divider" />
 
-          <div className="stat-item">
-            <span className="stat-icon">
-              <svg viewBox="0 0 40 40" aria-hidden="true">
+          <div className="auth-stat">
+            <div className="auth-stat__icon">
+              <svg viewBox="0 0 42 42" aria-hidden="true">
                 <path
-                  d="M8 32V22h5v10M18 32V13h5v19M28 32V7h5v25"
+                  d="M8 33V23h5v10M18 33V14h5v19M28 33V8h5v25"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -457,50 +426,50 @@ function Auth() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </span>
+            </div>
 
-            <span className="stat-copy">
+            <div>
               <strong>100K+</strong>
-              <small>{t.businessStat}</small>
-            </span>
+              <span>{t.statBusiness}</span>
+            </div>
           </div>
 
-          <span className="stat-divider" />
+          <i className="auth-stats__divider" />
 
-          <div className="stat-item">
-            <span className="stat-icon">
-              <svg viewBox="0 0 40 40" aria-hidden="true">
+          <div className="auth-stat">
+            <div className="auth-stat__icon">
+              <svg viewBox="0 0 42 42" aria-hidden="true">
                 <path
-                  d="M20 5c1 7 4 10 11 11-7 1-10 4-11 11-1-7-4-10-11-11 7-1 10-4 11-11Z"
+                  d="M20 6c1.2 7.3 4.6 10.7 12 12-7.4 1.3-10.8 4.7-12 12-1.2-7.3-4.6-10.7-12-12 7.4-1.3 10.8-4.7 12-12Z"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.8"
+                  strokeWidth="1.7"
                 />
+
                 <path
-                  d="M31 27c.5 3 2 4.5 5 5-3 .5-4.5 2-5 5-.5-3-2-4.5-5-5 3-.5 4.5-2 5-5Z"
+                  d="M32 28c.5 3 2 4.5 5 5-3 .5-4.5 2-5 5-.5-3-2-4.5-5-5 3-.5 4.5-2 5-5Z"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth="1.4"
                 />
               </svg>
-            </span>
+            </div>
 
-            <span className="stat-copy">
+            <div>
               <strong>AI</strong>
-              <small>{t.aiStat}</small>
-            </span>
+              <span>{t.statAI}</span>
+            </div>
           </div>
         </div>
 
-        <div className="marketplace-strip">
-          {marketplaces.map((marketplace) => (
+        <div className="marketplace-row">
+          {marketplaceItems.map((item) => (
             <div
-              className={`marketplace marketplace--${marketplace.id}`}
-              key={marketplace.id}
-              title={marketplace.aria}
-              aria-label={marketplace.aria}
+              key={item.key}
+              className={`marketplace-box marketplace-box--${item.key}`}
+              title={item.name}
             >
-              <span>{marketplace.label}</span>
+              <span>{item.text}</span>
             </div>
           ))}
         </div>
